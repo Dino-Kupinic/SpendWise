@@ -15,3 +15,20 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
+    depends_on:
+      - database
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5433
+      - DB_USER=dkupinic
+      - DB_PASSWORD=123
+      - DB_NAME=expense_tracker
+
+  database:
+    image: postgres
+    ports:
+      - "5433:5433"
+    environment:
+      - POSTGRES_USER=dkupinic
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=expense_tracker
