@@ -1,2 +1,2 @@
-# ExpenseTracker
+# SpendWise
 Expense Tracker in Vue.js 3 (Composition API) with Nest.js backend
