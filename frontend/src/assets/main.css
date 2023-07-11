@@ -1,7 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
+    --black: #1f1f1f;
+    --primary: #001C30;
+    --secondary: #176B87;
+    --tertiary: #64CCC5;
+    --quaternary: #DAFFFB;
 
+    font-family: 'Merriweather', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background: rgb(31, 31, 31);
+    background: linear-gradient(138deg, rgba(31, 31, 31, 1) 0%, rgba(0, 28, 48, 1) 25%, rgba(4, 37, 57, 1) 35%, rgba(9, 48, 68, 1) 45%, rgba(12, 55, 75, 1) 53%, rgba(17, 68, 87, 1) 65%, rgba(20, 88, 111, 1) 81%, rgba(23, 107, 135, 1) 98%);
+    background-attachment: fixed;
+    color: var(--quaternary);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.45rem;
+}
+
+body::-webkit-scrollbar:horizontal {
+    height: 0.45rem;
+}
+
+body::-webkit-scrollbar-track, body::-webkit-scrollbar-track:horizontal {
+    background-color: var(--black);
+}
+
+body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--tertiary);
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-corner {
+    background-color: var(--black);
 }
 
 
