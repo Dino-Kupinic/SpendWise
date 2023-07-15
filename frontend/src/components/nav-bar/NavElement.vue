@@ -1,10 +1,12 @@
 <script setup lang="ts">
-
-
 import Icon from "@/components/util/Icon.vue";
+import MenuNavigationText from "@/components/text/MenuNavigationText.vue";
 
 defineProps({
-  title: String,
+  title: {
+    type: String,
+    required: true
+  },
   link: {
     type: String,
     required: true
@@ -16,11 +18,18 @@ defineProps({
 <template>
   <li>
     <RouterLink class="routerLink" :to=link>
-      <button><Icon :name=icon></Icon> {{ title }}</button>
+      <MenuNavigationText :text="title"><Icon :name=icon></Icon></MenuNavigationText>
     </RouterLink>
   </li>
 </template>
 
 <style scoped>
+li {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 
+.routerLink {
+  text-decoration: none;
+}
 </style>

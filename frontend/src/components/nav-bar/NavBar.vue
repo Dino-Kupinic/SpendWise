@@ -7,7 +7,11 @@ import Logo from "@/components/util/Logo.vue";
 <template>
   <nav>
     <ul>
-      <Logo></Logo>
+      <li class="logo-container">
+        <Logo></Logo>
+      </li>
+      <NavElement title="Home" link="/" icon="Home"></NavElement>
+      <NavElement title="Home" link="/" icon="Home"></NavElement>
       <NavElement title="Home" link="/" icon="Home"></NavElement>
     </ul>
   </nav>
@@ -15,12 +19,51 @@ import Logo from "@/components/util/Logo.vue";
 
 <style scoped>
 nav {
-  width: 100vw;
-  height: 4rem;
-  background: rgba(31, 31, 31, 0.48);
+  background: rgba(3, 3, 3, 0.48);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(31, 31, 31, 0.27);
+  position: fixed;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-container {
+  margin-right: auto;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  nav {
+    top: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  ul {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    top: 0;
+    width: 100vw;
+    height: 4rem;
+  }
+
+  ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 </style>
