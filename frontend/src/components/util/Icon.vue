@@ -1,24 +1,38 @@
 <script setup lang="ts">
-defineProps({
-  name: String,
-  padding: {
+import github from "@/assets/img/github.svg";
+import {ref} from "vue";
+
+const props = defineProps({
+  name: {
     type: String,
-    default: "0 5px 0 10px"
+    required: true
   }
 });
+
+const imgSrc = ref("");
+
+switch (props.name) {
+  case "github":
+    imgSrc.value = github;
+}
 </script>
 
 <template>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-  <span class="material-symbols-outlined">{{ name }}</span>
+  <div>
+    <img :src="imgSrc" alt="Icon">
+  </div>
 </template>
 
 <style scoped>
-span {
-  vertical-align: bottom;
-  font-size: 1rem;
-  padding: v-bind(padding);
+img {
+  margin-left: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+}
+
+img:hover {
+  opacity: 80%;
 }
 
 </style>

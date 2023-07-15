@@ -1,7 +1,10 @@
 <script setup lang="ts">
-
-import NavElement from "@/components/nav-bar/NavElement.vue";
+import NavElement from "@/components/nav-bar/NavTextElement.vue";
 import Logo from "@/components/util/Logo.vue";
+import NavIconElement from "@/components/nav-bar/NavIconElement.vue";
+import {provide} from "vue";
+import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
+
 </script>
 
 <template>
@@ -15,9 +18,13 @@ import Logo from "@/components/util/Logo.vue";
       <li class="logo-container">
         <Logo></Logo>
       </li>
-      <NavElement title="Home" link="/" icon="Home"></NavElement>
-      <NavElement title="Home" link="/" icon="Home"></NavElement>
-      <NavElement title="Pricing" link="/" icon="Home"></NavElement>
+      <NavElement title="Home" link="/"></NavElement>
+      <NavElement title="Features" link="/"></NavElement>
+      <NavElement title="Docs" link="/"></NavElement>
+      <NavElement title="Pricing" link="/"></NavElement>
+      <NavElement title="About" link="/"></NavElement>
+      <VerticalSpacer></VerticalSpacer>
+      <NavIconElement link="https://github.com/Dino-Kupinic/SpendWise" icon="github"></NavIconElement>
     </ul>
   </nav>
 </template>
@@ -29,6 +36,7 @@ nav {
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   position: fixed;
+  border-bottom: 1px solid var(--white);
 }
 
 ul {

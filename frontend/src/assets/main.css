@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Pacifico&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --black: #1f1f1f;
+    --black: rgb(16, 16, 16);
+    --dark-grey: rgb(38, 36, 36);
     --white: #DAFFFB;
 
     --primary-blue: #001C30;
+    --primary-blue-2: #002138;
     --secondary-blue: #176B87;
     --tertiary-blue: #389abb;
     --quarterly-blue: #64CCC5;

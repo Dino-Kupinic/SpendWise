@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import Icon from "@/components/util/Icon.vue";
 import MenuNavigationText from "@/components/text/MenuNavigationText.vue";
 
 defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   link: {
     type: String,
-    required: true
+    required: true,
   },
   icon: String,
 });
@@ -18,15 +17,15 @@ defineProps({
 <template>
   <li>
     <RouterLink class="routerLink" :to=link>
-      <MenuNavigationText :text="title"><Icon :name=icon></Icon></MenuNavigationText>
+      <MenuNavigationText :text="title"></MenuNavigationText>
     </RouterLink>
   </li>
 </template>
 
 <style scoped>
 li {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .routerLink {

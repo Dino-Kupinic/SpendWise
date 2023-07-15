@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <img src="../../assets/img/SpendWise_logo.svg" alt="Logo">
+  <img src="@/assets/img/SpendWise_logo.svg" alt="Logo">
 </template>
 
 <style scoped>
