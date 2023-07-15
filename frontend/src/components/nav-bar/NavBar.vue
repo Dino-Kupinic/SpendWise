@@ -7,12 +7,17 @@ import Logo from "@/components/util/Logo.vue";
 <template>
   <nav>
     <ul>
+      <li class="toggle-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
       <li class="logo-container">
         <Logo></Logo>
       </li>
       <NavElement title="Home" link="/" icon="Home"></NavElement>
       <NavElement title="Home" link="/" icon="Home"></NavElement>
-      <NavElement title="Home" link="/" icon="Home"></NavElement>
+      <NavElement title="Pricing" link="/" icon="Home"></NavElement>
     </ul>
   </nav>
 </template>
