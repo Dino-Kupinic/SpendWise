@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import Footer from "@/components/footer/Footer.vue";
-import TitleText from "@/components/text/TitleText.vue";
 import SubtitleText from "@/components/text/SubtitleText.vue";
 import HeroButton from "@/components/button/HeroButton.vue";
 import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
+import HeroText from "@/components/text/HeroText.vue";
 </script>
 
 <template>
 
   <div class="hero-section">
-    <span>
-      <TitleText text="All"></TitleText>
-      <TitleText text="expenses." :gradient="true"></TitleText>
-      <TitleText text="In one place."></TitleText>
+    <span class="hero-text">
+      <HeroText text="All"></HeroText>
+      <HeroText text="expenses." :gradient="true"></HeroText>
+      <HeroText text="In one place."></HeroText>
     </span>
     <div class="hero-subtitle-container">
       <SubtitleText
@@ -38,6 +38,10 @@ import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
   text-align: center;
 }
 
+.hero-text {
+
+}
+
 .hero-subtitle-container {
   max-width: 100%;
   text-align: center;
@@ -50,4 +54,5 @@ import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
 p {
   color: var(--neutral-100);
 }
+
 </style>
