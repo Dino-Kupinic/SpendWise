@@ -20,8 +20,10 @@ import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
       <SubtitleText
           text="giving you an excellent overview of where your money is being spent."></SubtitleText>
     </div>
-    <HeroButton icon="Chevron_right" text="Start for free" to="" ></HeroButton>
-    <HeroButtonHollow icon="North_east" text="Explore Features" to=""></HeroButtonHollow>
+    <div class="hero-buttons-container">
+      <HeroButton icon="Arrow_forward" text="Start for free" to="" ></HeroButton>
+      <HeroButtonHollow icon="North_east" text="Explore Features" to=""></HeroButtonHollow>
+    </div>
   </div>
 
 
@@ -39,6 +41,10 @@ import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
 .hero-subtitle-container {
   max-width: 100%;
   text-align: center;
+}
+
+.hero-buttons-container {
+  margin-top: 3rem;
 }
 
 p {
