@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import Icon from "@/components/util/Icon.vue";
 
-defineProps({
-  icon: {
-    type: String,
-    required: true,
-  },
-  link: {
-    type: String,
-    required: true,
-  },
-});
+const props = defineProps<{
+  icon: string,
+  link: string,
+}>();
 </script>
 
 <template>
   <li>
-    <a :href=link>
-      <Icon :name="icon"></Icon>
+    <a :href="props.link" target="_blank" rel="noopener noreferrer" >
+      <Icon :name="props.icon"></Icon>
     </a>
   </li>
 </template>

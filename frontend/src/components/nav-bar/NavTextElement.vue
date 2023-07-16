@@ -1,23 +1,16 @@
 <script setup lang="ts">
 import MenuNavigationText from "@/components/text/MenuNavigationText.vue";
 
-defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  link: {
-    type: String,
-    required: true,
-  },
-  icon: String,
-});
+const props = defineProps<{
+  title: string,
+  link: string,
+}>();
 </script>
 
 <template>
   <li>
-    <RouterLink class="routerLink" :to=link>
-      <MenuNavigationText :text="title"></MenuNavigationText>
+    <RouterLink class="routerLink" :to="props.link">
+      <MenuNavigationText :text="props.title"></MenuNavigationText>
     </RouterLink>
   </li>
 </template>

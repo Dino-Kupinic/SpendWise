@@ -2,7 +2,6 @@
 import NavElement from "@/components/nav-bar/NavTextElement.vue";
 import Logo from "@/components/util/Logo.vue";
 import NavIconElement from "@/components/nav-bar/NavIconElement.vue";
-import {provide} from "vue";
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
 
 </script>
@@ -18,7 +17,6 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
       <li class="logo-container">
         <Logo></Logo>
       </li>
-      <NavElement title="Home" link="/"></NavElement>
       <NavElement title="Features" link="/"></NavElement>
       <NavElement title="Docs" link="/"></NavElement>
       <NavElement title="Pricing" link="/"></NavElement>
@@ -31,12 +29,14 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
 
 <style scoped>
 nav {
-  background: rgba(3, 3, 3, 0.48);
+  height: 4rem;
+  background: var(--neutral-1000);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  position: fixed;
-  border-bottom: 1px solid var(--white);
+  position: sticky;
+  z-index: 100;
+  border-bottom: 1px solid var(--neutral-100);
 }
 
 ul {
@@ -57,8 +57,7 @@ ul {
 @media only screen and (min-width: 600px) {
   nav {
     top: 0;
-    width: 100vw;
-    height: 5rem;
+    width: 100%;
   }
 
   ul {
@@ -70,8 +69,7 @@ ul {
 @media only screen and (max-width: 600px) {
   nav {
     top: 0;
-    width: 100vw;
-    height: 4rem;
+    width: 100%;
   }
 
   ul {

@@ -1,28 +1,24 @@
 <script setup lang="ts">
-defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
-});
+const props = defineProps<{
+  text: string
+}>();
 </script>
 
 <template>
-  <h4>{{ text }}</h4>
+  <h4>{{ props.text }}</h4>
 </template>
 
 <style scoped>
 h4 {
   font-family: "Roboto", serif;
   font-weight: 400;
-  font-size: 18px;
   letter-spacing: 1px;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--neutral-200);
 }
 
 h4:hover {
-  color: var(--tertiary-blue);
+  color: var(--brand-500);
   transition: all 0.3s;
 }
 </style>

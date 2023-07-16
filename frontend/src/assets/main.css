@@ -1,26 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Pacifico&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Merriweather:wght@400;700&family=Pacifico&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --black: rgb(16, 16, 16);
-    --dark-grey: rgb(38, 36, 36);
-    --white: #DAFFFB;
 
-    --primary-blue: #001C30;
-    --primary-blue-2: #002138;
-    --secondary-blue: #176B87;
-    --tertiary-blue: #389abb;
-    --quarterly-blue: #64CCC5;
 
-    font-family: 'Merriweather', sans-serif;
-    font-size: 16px;
+    --neutral-100: #fff1f1;
+    --neutral-200: #d4d4d4;
+    --neutral-300: #b8b8b8;
+    --neutral-400: #9c9c9c;
+    --neutral-500: #808080;
+    --neutral-600: #636363;
+    --neutral-700: #474747;
+    --neutral-800: #2a2a2a;
+    --neutral-900: #0e0e0e;
+    --neutral-1000: #030303;
+
+    --brand-100: #e5f6fd;
+    --brand-200: #b0e4f9;
+    --brand-300: #7bd2f5;
+    --brand-400: #389abb;
+    --brand-500: #12aeed;
+    --brand-600: #0e87b8;
+    --brand-700: #0a6184;
+    --brand-800: #063a4f;
+    --brand-900: #001B26;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 
 }
 
 body {
-    background: hsla(0, 0%, 7%, 1);
-    background: linear-gradient(90deg, hsla(0, 0%, 7%, 1) 0%, hsla(205, 100%, 9%, 1) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(138deg, rgba(0, 0, 0, 1) 0%, rgba(0, 27, 38, 1) 100%);
     background-attachment: fixed;
-    color: var(--white);
+    color: var(--neutral-100);
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -36,16 +49,16 @@ body::-webkit-scrollbar:horizontal {
 }
 
 body::-webkit-scrollbar-track, body::-webkit-scrollbar-track:horizontal {
-    background-color: var(--black);
+    background-color: var(--neutral-900);
 }
 
 body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb:horizontal {
-    background-color: var(--white);
+    background-color: var(--neutral-100);
     border-radius: 20px;
 }
 
 body::-webkit-scrollbar-corner {
-    background-color: var(--black);
+    background-color: var(--neutral-900);
 }
 
 

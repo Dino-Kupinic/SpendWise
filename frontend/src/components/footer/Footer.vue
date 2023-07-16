@@ -3,14 +3,21 @@
 </script>
 
 <template>
-<div>
+  <div class="main-footer">
 
-</div>
+
+  </div>
 </template>
 
 <style scoped>
-div {
-  height: 50vh;
-  width: 100vw;
+.main-footer {
+  padding: 0;
+  margin: 0;
+  background-color: var(--neutral-1000);
+  height: 20vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
+
 </style>
