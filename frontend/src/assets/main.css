@@ -3,6 +3,7 @@
 :root {
 
 
+    --neutral-100-minor: rgba(255, 241, 241, 0.68);
     --neutral-100: #fff1f1;
     --neutral-200: #d4d4d4;
     --neutral-300: #b8b8b8;
@@ -37,7 +38,11 @@ body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    overscroll-behavior: none;
+    overscroll-behavior-x: none;
+}
+
+html {
+    background: rgb(0, 0, 0);
 }
 
 body::-webkit-scrollbar {

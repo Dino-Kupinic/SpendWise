@@ -3,7 +3,7 @@ import {computed} from "vue";
 
 interface Props {
   name: string,
-  padding: string,
+  padding?: string,
   fontSize: string
 }
 

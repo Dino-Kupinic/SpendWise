@@ -4,6 +4,7 @@ import SubtitleText from "@/components/text/SubtitleText.vue";
 import HeroButton from "@/components/button/HeroButton.vue";
 import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
 import HeroText from "@/components/text/HeroText.vue";
+import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
 </script>
 
 <template>
@@ -26,6 +27,11 @@ import HeroText from "@/components/text/HeroText.vue";
     </div>
   </div>
 
+  <div class="feature-section">
+    <FeatureBox></FeatureBox>
+    <FeatureBox></FeatureBox>
+    <FeatureBox></FeatureBox>
+  </div>
 
   <Footer></Footer>
 </template>
@@ -51,8 +57,13 @@ import HeroText from "@/components/text/HeroText.vue";
   margin-top: 3rem;
 }
 
-p {
-  color: var(--neutral-100);
+.feature-section {
+  padding: 0;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
 }
 
 </style>
