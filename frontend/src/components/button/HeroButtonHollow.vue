@@ -19,7 +19,8 @@ const props = defineProps<{
 
 <style scoped>
 button {
-  margin-left: 2rem;
+  margin: 1rem 1rem;
+  width: 14rem;
   background-color: var(--neutral-1000);
   border-radius: 1.2rem;
   border: 1px solid var(--brand-500);

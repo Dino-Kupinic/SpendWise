@@ -32,4 +32,10 @@ div {
   width: v-bind(boxWidth);
   height: v-bind(boxHeight);
 }
+
+@media (max-width: 768px) {
+  div {
+    width: 100%;
+  }
+}
 </style>

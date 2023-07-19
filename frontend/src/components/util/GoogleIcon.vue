@@ -8,7 +8,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  padding: "0 5px 0 10px",
+  padding: "0 5px 0 5px",
   fontSize: "1rem",
 });
 

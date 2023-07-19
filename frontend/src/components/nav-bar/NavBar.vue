@@ -29,7 +29,6 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
 
 <style scoped>
 nav {
-  height: 4rem;
   background: var(--neutral-1000);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9px);
@@ -58,6 +57,8 @@ ul {
   nav {
     top: 0;
     width: 100%;
+    height: 4rem;
+
   }
 
   ul {
@@ -70,6 +71,8 @@ ul {
   nav {
     top: 0;
     width: 100%;
+    height: 6rem;
+
   }
 
   ul {

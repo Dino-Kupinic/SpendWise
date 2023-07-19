@@ -22,7 +22,7 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
           text="giving you an excellent overview of where your money is being spent."></SubtitleText>
     </div>
     <div class="hero-buttons-container">
-      <HeroButton icon="Arrow_forward" text="Start for free" to="" ></HeroButton>
+      <HeroButton icon="Arrow_forward" text="Start for free" to=""></HeroButton>
       <HeroButtonHollow icon="North_east" text="Explore Features" to=""></HeroButtonHollow>
     </div>
   </div>
@@ -38,14 +38,14 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
 
 <style scoped>
 .hero-section {
-  margin: 0;
+  margin-bottom: 4rem;
   padding: 8rem;
-  height: 40vh;
+  height: 45vh;
   text-align: center;
 }
 
 .hero-text {
-
+  display: block;
 }
 
 .hero-subtitle-container {
@@ -58,12 +58,23 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
 }
 
 .feature-section {
-  padding: 0;
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin: auto;
+  padding: 0;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 </style>

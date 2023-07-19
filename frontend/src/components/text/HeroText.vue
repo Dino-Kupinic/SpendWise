@@ -6,18 +6,17 @@ const props = defineProps<{
 </script>
 
 <template>
-  <h1 :class="{ color: gradient}" >{{ props.text }}</h1>
+  <span :class="{ color: gradient}" >{{ props.text }}</span>
 </template>
 
 <style scoped>
-h1 {
+span {
   display: inline-block;
   font-family: "Roboto", serif;
   margin-left: 1rem;
   font-size: clamp(3rem, 10vw, 7rem);
   font-weight: 700;
   letter-spacing: -2px;
-  line-height: 1.2;
   margin-bottom: 2rem;
   color: var(--neutral-100);
 }
@@ -31,5 +30,11 @@ h1 {
 h4:hover {
   color: var(--brand-400);
   transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  span {
+    margin-bottom: 0.5rem;
+  }
 }
 </style>
