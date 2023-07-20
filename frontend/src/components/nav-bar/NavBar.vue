@@ -29,10 +29,10 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
 
 <style scoped>
 nav {
-  background: var(--neutral-1000);
+  background: rgba(8, 8, 8, 0.7);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   position: sticky;
   z-index: 100;
   border-bottom: 1px solid var(--neutral-100);

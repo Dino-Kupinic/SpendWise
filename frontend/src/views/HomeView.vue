@@ -28,9 +28,21 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
   </div>
 
   <div class="feature-section">
-    <FeatureBox></FeatureBox>
-    <FeatureBox></FeatureBox>
-    <FeatureBox></FeatureBox>
+    <FeatureBox
+        title="Expense Entry"
+        content="Effortlessly record your expenses with a user-friendly interface. Keep track of dates,
+        amounts, categories, vendors, and notes with ease.">
+    </FeatureBox>
+    <FeatureBox
+        title="Budgeting"
+        content="Take control of your finances with ease! Set up and manage budgets for different expense
+        categories, and receive timely notifications to stay on track.">
+    </FeatureBox>
+    <FeatureBox
+        title="User-Friendly Interface"
+        content="Experience simplicity and ease! Our intuitive interface empowers you to navigate effortlessly,
+        making expense tracking a delightful and productive experience.">
+    </FeatureBox>
   </div>
 
   <Footer></Footer>
@@ -38,7 +50,7 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
 
 <style scoped>
 .hero-section {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   padding: 8rem;
   height: 45vh;
   text-align: center;
@@ -66,10 +78,10 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
   gap: 2rem;
 }
 
-
 @media (max-width: 768px) {
   .hero-section {
     padding: 2rem;
+    margin-bottom: 8rem;
   }
 
   .feature-section {

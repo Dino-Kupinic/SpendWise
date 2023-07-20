@@ -9,7 +9,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   padding: "0 5px 0 5px",
-  fontSize: "1rem",
+  fontSize: "2rem",
 });
 
 const pad = computed(() => {
