@@ -1,31 +1,29 @@
 <script setup lang="ts">
-import {computed} from "vue";
-
 interface Props {
-  text: string,
-  color: string
+  fontSize?: string
+  color?: string
 }
-const props = withDefaults(defineProps<Props>(),{
-  text: "",
-  color: "var(--neutral-200)"
+
+const {color, fontSize} = withDefaults(defineProps<Props>(), {
+  color: "var(--neutral-200)",
+  fontSize: "16px"
 });
 
-const fontColor = computed(() => {
-  return props.color;
-})
 </script>
 
 <template>
-  <p>{{ props.text }}</p>
+  <p>
+    <slot></slot>
+  </p>
 </template>
 
 <style scoped>
 p {
-  font-size: 16px;
+  font-size: v-bind(fontSize);
   font-family: "Inter", serif;
   font-weight: 400;
   line-height: 1.5;
-  color: v-bind(fontColor);
+  color: v-bind(color);
 }
 
 </style>

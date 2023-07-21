@@ -2,9 +2,9 @@
 import Footer from "@/components/footer/Footer.vue";
 import SubtitleText from "@/components/text/SubtitleText.vue";
 import HeroButton from "@/components/button/HeroButton.vue";
-import HeroButtonHollow from "@/components/button/HeroButtonHollow.vue";
 import HeroText from "@/components/text/HeroText.vue";
 import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
+import GoogleIcon from "@/components/util/GoogleIcon.vue";
 </script>
 
 <template>
@@ -22,8 +22,14 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
           text="giving you an excellent overview of where your money is being spent."></SubtitleText>
     </div>
     <div class="hero-buttons-container">
-      <HeroButton icon="Arrow_forward" text="Start for free" to=""></HeroButton>
-      <HeroButtonHollow icon="North_east" text="Explore Features" to=""></HeroButtonHollow>
+      <HeroButton to="">
+        <GoogleIcon name="Arrow_forward" font-size="1.4rem"></GoogleIcon>
+        Start for free
+      </HeroButton>
+      <HeroButton to="" :hollow="true">
+        <GoogleIcon name="North_east" font-size="1.4rem"></GoogleIcon>
+        Explore Docs
+      </HeroButton>
     </div>
   </div>
 
@@ -45,7 +51,6 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
     </FeatureBox>
   </div>
 
-  <Footer></Footer>
 </template>
 
 <style scoped>

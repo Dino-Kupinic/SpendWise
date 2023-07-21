@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Icon from "@/components/util/Icon.vue";
+import Link from "@/components/util/Link.vue";
 
-const props = defineProps<{
+const {link, icon} = defineProps<{
   icon: string,
   link: string,
 }>();
@@ -9,9 +10,9 @@ const props = defineProps<{
 
 <template>
   <li>
-    <a :href="props.link" target="_blank" rel="noopener noreferrer" >
-      <Icon :name="props.icon"></Icon>
-    </a>
+    <Link :link="link">
+      <Icon :name="icon"></Icon>
+    </Link>
   </li>
 </template>
 
@@ -22,3 +23,4 @@ li {
 }
 
 </style>
+

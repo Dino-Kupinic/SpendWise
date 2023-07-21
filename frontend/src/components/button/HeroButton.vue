@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import GoogleIcon from "@/components/util/GoogleIcon.vue";
 
-const props = defineProps<{
-  text: string,
+const {to, hollow} = defineProps<{
   to: string
-  icon: string,
+  hollow?: boolean
 }>();
 </script>
 
 <template>
-  <RouterLink :to="props.to">
-    <button>
-      <GoogleIcon :name="props.icon" font-size="1.4rem"></GoogleIcon>
-      {{ props.text }}
+  <RouterLink :to="to">
+    <button :class="{ 'hollow': hollow }">
+      <slot>Ok</slot>
     </button>
   </RouterLink>
 </template>
@@ -20,7 +17,6 @@ const props = defineProps<{
 <style scoped>
 button {
   margin: 1rem 1rem;
-
   width: 14rem;
   background-color: var(--neutral-100);
   border-radius: 1.2rem;
@@ -28,6 +24,20 @@ button {
   padding-right: 1rem;
   font-family: Inter, serif;
   color: var(--neutral-1000);
+  font-weight: 400;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+button.hollow {
+  margin: 1rem 1rem;
+  width: 14rem;
+  background-color: var(--neutral-1000);
+  border-radius: 1.2rem;
+  border: 1px solid var(--brand-500);
+  padding-right: 1rem;
+  font-family: Inter, serif;
+  color: var(--brand-500);
   font-weight: 400;
   font-size: 1.2rem;
   height: 3rem;

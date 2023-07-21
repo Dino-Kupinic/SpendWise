@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import {computed} from "vue";
-
 interface Props {
   name: string,
   padding?: string,
-  fontSize: string
+  fontSize?: string,
+  lineHeight?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const {name, padding, fontSize, lineHeight} = withDefaults(defineProps<Props>(), {
+  name: "",
   padding: "0 5px 0 5px",
   fontSize: "2rem",
-});
-
-const pad = computed(() => {
-  return props.padding;
-});
-
-const size = computed(() => {
-  return props.fontSize;
+  lineHeight: "1.0",
 });
 
 </script>
@@ -25,14 +18,15 @@ const size = computed(() => {
 <template>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-  <span class="material-symbols-outlined">{{ props.name }}</span>
+  <span class="material-symbols-outlined">{{ name }}</span>
 </template>
 
 <style scoped>
 span {
   vertical-align: bottom;
-  font-size: v-bind(size);
-  padding: v-bind(pad);
+  font-size: v-bind(fontSize);
+  padding: v-bind(padding);
+  line-height: v-bind(lineHeight);
 }
 
 </style>
