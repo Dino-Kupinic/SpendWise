@@ -1,12 +1,13 @@
 <script setup lang="ts">
-const props = defineProps<{
+const {text, gradient, disableMargins} = defineProps<{
   text: string,
-  gradient?: boolean
+  gradient?: boolean,
+  disableMargins?: boolean
 }>();
 </script>
 
 <template>
-  <span :class="{ color: gradient}" >{{ props.text }}</span>
+  <span :class="{ color: gradient, noMargin: disableMargins}">{{ text }}</span>
 </template>
 
 <style scoped>
@@ -19,6 +20,10 @@ span {
   letter-spacing: -2px;
   margin-bottom: 2rem;
   color: var(--neutral-100);
+}
+
+.noMargin {
+  margin: 0;
 }
 
 .color {

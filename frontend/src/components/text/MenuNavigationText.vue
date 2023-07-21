@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{
+const {text} = defineProps<{
   text: string
 }>();
 </script>
 
 <template>
-  <h4>{{ props.text }}</h4>
+  <h4>{{ text }}</h4>
 </template>
 
 <style scoped>

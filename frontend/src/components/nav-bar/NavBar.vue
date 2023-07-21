@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavElement from "@/components/nav-bar/NavTextElement.vue";
+import NavTextElement from "@/components/nav-bar/NavTextElement.vue";
 import Logo from "@/components/util/Logo.vue";
 import NavIconElement from "@/components/nav-bar/NavIconElement.vue";
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
@@ -17,10 +17,10 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
       <li class="logo-container">
         <Logo></Logo>
       </li>
-      <NavElement title="Features" link="/"></NavElement>
-      <NavElement title="Docs" link="/"></NavElement>
-      <NavElement title="Pricing" link="/"></NavElement>
-      <NavElement title="About" link="/"></NavElement>
+      <NavTextElement title="Features" link="/"></NavTextElement>
+      <NavTextElement title="Docs" link="/"></NavTextElement>
+      <NavTextElement title="Pricing" link="/"></NavTextElement>
+      <NavTextElement title="About" link="/"></NavTextElement>
       <VerticalSpacer></VerticalSpacer>
       <NavIconElement link="https://github.com/Dino-Kupinic/SpendWise" icon="github"></NavIconElement>
     </ul>
