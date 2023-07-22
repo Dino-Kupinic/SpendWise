@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import NavTextElement from "@/components/nav-bar/NavTextElement.vue";
 import Logo from "@/components/util/Logo.vue";
-import NavIconElement from "@/components/nav-bar/NavIconElement.vue";
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
+import ActionButton from "@/components/button/ActionButton.vue";
 
 </script>
 
@@ -22,7 +22,8 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
       <NavTextElement title="Pricing" link="/"></NavTextElement>
       <NavTextElement title="About" link="/"></NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-      <NavIconElement link="https://github.com/Dino-Kupinic/SpendWise" icon="github"></NavIconElement>
+      <ActionButton width="6rem" :hollow="true">Login</ActionButton>
+      <ActionButton width="6rem">Register</ActionButton>
     </ul>
   </nav>
 </template>
@@ -58,12 +59,11 @@ ul {
     top: 0;
     width: 100%;
     height: 4rem;
-
   }
 
   ul {
     padding-left: 5rem;
-    padding-right: 5rem;
+    padding-right: 2.5rem;
   }
 }
 

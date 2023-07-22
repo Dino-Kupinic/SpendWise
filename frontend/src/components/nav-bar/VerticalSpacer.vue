@@ -10,7 +10,8 @@
 div {
   background-color: var(--neutral-800);
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
   height: 50%;
-  width: 1.2pt;
+  width: 1pt;
 }
 </style>

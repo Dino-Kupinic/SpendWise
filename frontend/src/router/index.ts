@@ -14,11 +14,12 @@ const routes = [
     name: "authentication",
     component: AuthenticationView,
   },
+  // catch all 404
   {
     path: "/:pathMatch(.*)",
     name: "not found",
-    component: NotFoundView
-  }
+    component: NotFoundView,
+  },
 ];
 
 const router = createRouter({

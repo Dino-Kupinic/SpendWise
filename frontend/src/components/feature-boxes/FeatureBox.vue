@@ -2,12 +2,19 @@
 import BodyText from "@/components/text/BodyText.vue";
 import BodySubtitleText from "@/components/text/BodySubtitleText.vue";
 
-const {title, content, width = "30%", height = "16rem"} = defineProps<{
+interface Props {
   title: string,
   content: string,
   width?: string,
   height?: string
-}>();
+}
+
+withDefaults(defineProps<Props>(), {
+  title: "",
+  content: "",
+  width: "30%",
+  height: "16rem",
+});
 </script>
 
 <template>
@@ -15,7 +22,7 @@ const {title, content, width = "30%", height = "16rem"} = defineProps<{
     <span>
       <BodySubtitleText :text="title"></BodySubtitleText>
     </span>
-    <BodyText>{{content}}</BodyText>
+    <BodyText>{{ content }}</BodyText>
     <slot></slot>
   </div>
 </template>

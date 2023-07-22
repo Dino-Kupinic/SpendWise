@@ -2,22 +2,22 @@
 import Icon from "@/components/util/Icon.vue";
 import Link from "@/components/util/Link.vue";
 
-const {link, icon} = defineProps<{
+defineProps<{
   icon: string,
   link: string,
 }>();
 </script>
 
 <template>
-  <li>
+  <div>
     <Link :link="link">
       <Icon :name="icon"></Icon>
     </Link>
-  </li>
+  </div>
 </template>
 
 <style scoped>
-li {
+div {
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 }
