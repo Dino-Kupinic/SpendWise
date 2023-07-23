@@ -20,7 +20,7 @@ img:hover {
 
 @media only screen and (max-width: 600px) {
   img {
-    width: 7rem;
+    width: 8rem;
   }
 }
 

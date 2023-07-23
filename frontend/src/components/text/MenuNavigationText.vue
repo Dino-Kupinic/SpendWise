@@ -1,11 +1,11 @@
 <script setup lang="ts">
-defineProps<{
-  text: string
-}>();
+
 </script>
 
 <template>
-  <h4>{{ text }}</h4>
+  <h4>
+    <slot></slot>
+  </h4>
 </template>
 
 <style scoped>
@@ -20,5 +20,12 @@ h4 {
 h4:hover {
   color: var(--brand-500);
   transition: all 0.3s;
+}
+
+@media only screen and (max-width: 800px) {
+  h4 {
+    text-align: left;
+    margin: 0;
+  }
 }
 </style>

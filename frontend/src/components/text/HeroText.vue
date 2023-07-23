@@ -15,7 +15,8 @@ span {
   display: inline-block;
   font-family: "Roboto", serif;
   margin-left: 1rem;
-  font-size: clamp(3rem, 10vw, 7rem);
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 0.9;
   font-weight: 700;
   letter-spacing: -2px;
   margin-bottom: 2rem;

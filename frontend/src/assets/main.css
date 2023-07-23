@@ -3,8 +3,8 @@
 :root {
 
 
-    --neutral-100-minor: rgba(255, 241, 241, 0.68);
     --neutral-100: #fff1f1;
+    --neutral-100-minor: rgba(255, 241, 241, 0.68);
     --neutral-200: #d4d4d4;
     --neutral-300: #b8b8b8;
     --neutral-400: #9c9c9c;

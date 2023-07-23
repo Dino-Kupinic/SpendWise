@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import MenuNavigationText from "@/components/text/MenuNavigationText.vue";
 
-const {title, link} = defineProps<{
-  title: string,
+defineProps<{
   link: string,
 }>();
 </script>
@@ -10,8 +9,9 @@ const {title, link} = defineProps<{
 <template>
   <li>
     <RouterLink class="routerLink" :to="link">
-      <MenuNavigationText :text="title"></MenuNavigationText>
-      <slot></slot>
+      <MenuNavigationText>
+        <slot></slot>
+      </MenuNavigationText>
     </RouterLink>
   </li>
 </template>
@@ -25,4 +25,5 @@ li {
 .routerLink {
   text-decoration: none;
 }
+
 </style>
