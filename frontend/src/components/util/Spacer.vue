@@ -1,8 +1,13 @@
 <script setup lang="ts">
-const {width = "1rem", height = "100%"} = defineProps<{
+interface Props {
   width?: string,
   height?: string
-}>();
+}
+
+withDefaults( defineProps<Props>(), {
+  width: "100%",
+  height: "1rem",
+});
 </script>
 
 <template>

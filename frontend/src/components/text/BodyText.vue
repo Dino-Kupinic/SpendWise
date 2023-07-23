@@ -4,7 +4,7 @@ interface Props {
   color?: string
 }
 
-const {color, fontSize} = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   color: "var(--neutral-200)",
   fontSize: "16px"
 });

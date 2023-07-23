@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {text, gradient, disableMargins} = defineProps<{
+defineProps<{
   text: string,
   gradient?: boolean,
   disableMargins?: boolean

@@ -3,15 +3,11 @@ import BodyText from "@/components/text/BodyText.vue";
 import BodySubtitleText from "@/components/text/BodySubtitleText.vue";
 
 interface Props {
-  title: string,
-  content: string,
   width?: string,
   height?: string
 }
 
 withDefaults(defineProps<Props>(), {
-  title: "",
-  content: "",
   width: "30%",
   height: "16rem",
 });
@@ -19,10 +15,6 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div>
-    <span>
-      <BodySubtitleText :text="title"></BodySubtitleText>
-    </span>
-    <BodyText>{{ content }}</BodyText>
     <slot></slot>
   </div>
 </template>

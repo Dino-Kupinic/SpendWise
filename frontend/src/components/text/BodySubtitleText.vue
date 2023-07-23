@@ -2,29 +2,26 @@
 import {computed} from "vue";
 
 interface Props {
-  text: string,
   size?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  text: "",
+withDefaults(defineProps<Props>(), {
   size: "2rem",
 });
 
-const fontSize = computed(() => {
-  return props.size;
-});
 </script>
 
 <template>
-  <h3>{{ props.text }}</h3>
+  <h3>
+    <slot></slot>
+  </h3>
 </template>
 
 <style scoped>
 h3 {
   display: inline;
   font-family: "Inter", serif;
-  font-size: v-bind(fontSize);
+  font-size: v-bind(size);
   font-weight: 500;
   line-height: 1.2;
   color: var(--neutral-100);

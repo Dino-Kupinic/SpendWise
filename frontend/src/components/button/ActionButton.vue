@@ -2,7 +2,8 @@
 interface Props {
   margin?: string,
   width?: string,
-  hollow?: boolean
+  hollow?: boolean,
+  glow?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -13,7 +14,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button :class="{ 'hollow': hollow }">
+  <button :class="{ 'hollow': hollow, 'glow': glow }">
     <slot></slot>
   </button>
 </template>
@@ -32,7 +33,7 @@ button {
   height: 2rem;
 }
 
-button.hollow {
+.hollow {
   background-color: var(--neutral-1000);
   border-radius: 1.2rem;
   border: 1px solid var(--brand-500);
@@ -41,6 +42,12 @@ button.hollow {
   font-weight: 400;
   font-size: 1rem;
   height: 2rem;
+}
+
+.glow:hover {
+  -webkit-box-shadow:0 0 139px 4px rgba(18,142,237,0.71);
+  -moz-box-shadow: 0 0 139px 4px rgba(18,142,237,0.71);
+  box-shadow: 0 0 139px 4px rgba(18,142,237,0.71);
 }
 
 button:hover {

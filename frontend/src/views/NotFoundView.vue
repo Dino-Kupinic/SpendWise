@@ -16,7 +16,7 @@ import Spacer from "@/components/util/Spacer.vue";
     <BodyText>
       But if you don't change your direction, and if you keep looking, you may end up where you are heading.
     </BodyText>
-    <HeroButton to="/" :hollow="true">
+    <HeroButton class="heroButton" to="/" :hollow="true">
       <GoogleIcon name="North_East" font-size="1.4rem"></GoogleIcon>
       Take me home
     </HeroButton>
@@ -29,5 +29,9 @@ div {
   width: 30%;
   text-align: center;
   margin: auto;
+}
+
+.heroButton {
+  margin: 0 !important;
 }
 </style>

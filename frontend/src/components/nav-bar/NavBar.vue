@@ -22,8 +22,8 @@ import ActionButton from "@/components/button/ActionButton.vue";
       <NavTextElement title="Pricing" link="/"></NavTextElement>
       <NavTextElement title="About" link="/"></NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-      <ActionButton width="6rem" :hollow="true">Login</ActionButton>
-      <ActionButton width="6rem">Register</ActionButton>
+      <ActionButton width="6rem" :hollow="true" :glow="true">Login</ActionButton>
+      <ActionButton width="6rem" :glow="true">Register</ActionButton>
     </ul>
   </nav>
 </template>

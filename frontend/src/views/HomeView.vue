@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import Footer from "@/components/footer/Footer.vue";
 import SubtitleText from "@/components/text/SubtitleText.vue";
 import HeroButton from "@/components/button/HeroButton.vue";
 import HeroText from "@/components/text/HeroText.vue";
 import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
 import GoogleIcon from "@/components/util/GoogleIcon.vue";
+import BodySubtitleText from "@/components/text/BodySubtitleText.vue";
+import BodyText from "@/components/text/BodyText.vue";
 </script>
 
 <template>
@@ -16,10 +17,12 @@ import GoogleIcon from "@/components/util/GoogleIcon.vue";
       <HeroText text="In one place."></HeroText>
     </span>
     <div class="hero-subtitle-container">
-      <SubtitleText
-          text="SpendWise.™ offers a seamless and simple expense tracking experience,"></SubtitleText>
-      <SubtitleText
-          text="giving you an excellent overview of where your money is being spent."></SubtitleText>
+      <SubtitleText>
+        SpendWise.™ offers a seamless and simple expense tracking experience,
+      </SubtitleText>
+      <SubtitleText>
+        giving you an excellent overview of where your money is being spent.
+      </SubtitleText>
     </div>
     <div class="hero-buttons-container">
       <HeroButton to="">
@@ -34,20 +37,25 @@ import GoogleIcon from "@/components/util/GoogleIcon.vue";
   </div>
 
   <div class="feature-section">
-    <FeatureBox
-        title="Expense Entry"
-        content="Effortlessly record your expenses with a user-friendly interface. Keep track of dates,
-        amounts, categories, vendors, and notes with ease.">
+    <FeatureBox>
+      <BodySubtitleText>Expense Entry</BodySubtitleText>
+      <BodyText>
+        <p>Effortlessly record your expenses with a user-friendly interface.</p>
+        <p>Keep track of dates, amounts, categories, vendors, and notes with ease.</p>
+      </BodyText>
     </FeatureBox>
-    <FeatureBox
-        title="Budgeting"
-        content="Take control of your finances with ease! Set up and manage budgets for different expense
-        categories, and receive timely notifications to stay on track.">
+    <FeatureBox>
+      <BodySubtitleText>Budgeting</BodySubtitleText>
+      <BodyText>
+        Set up and manage budgets for different expense categories, and receive timely notifications to stay on track.
+      </BodyText>
     </FeatureBox>
-    <FeatureBox
-        title="User-Friendly Interface"
-        content="Experience simplicity and ease! Our intuitive interface empowers you to navigate effortlessly,
-        making expense tracking a delightful and productive experience.">
+    <FeatureBox>
+      <BodySubtitleText>User-Friendly Interface</BodySubtitleText>
+      <BodyText>
+        Experience simplicity and ease! Our intuitive interface empowers you to navigate effortlessly,
+        making expense tracking a delightful and productive experience.
+      </BodyText>
     </FeatureBox>
   </div>
 

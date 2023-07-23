@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <img src="@/assets/img/SpendWise_logo.svg" alt="Logo">
+  <RouterLink to="/">
+    <img src="@/assets/img/SpendWise_logo.svg" alt="Logo">
+  </RouterLink>
 </template>
 
 <style scoped>
