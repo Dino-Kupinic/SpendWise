@@ -3,7 +3,7 @@ defineProps<{
   text: string,
   gradient?: boolean,
   disableMargins?: boolean
-}>();
+}>()
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import NavTextElement from "@/components/nav-bar/NavTextElement.vue";
-import Logo from "@/components/util/Logo.vue";
-import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue";
-import ActionButton from "@/components/button/ActionButton.vue";
-import {ref} from "vue";
+import NavTextElement from "@/components/nav-bar/NavTextElement.vue"
+import Logo from "@/components/util/Logo.vue"
+import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue"
+import ActionButton from "@/components/button/ActionButton.vue"
+import {ref} from "vue"
 
-const isActive = ref(false);
+const isActive = ref(false)
 
 </script>
 

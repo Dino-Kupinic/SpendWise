@@ -10,7 +10,7 @@ withDefaults(defineProps<Props>(), {
   margin: "0.5rem 0.5rem",
   width: "auto",
   hollow: false,
-});
+})
 </script>
 
 <template>
@@ -45,9 +45,9 @@ button {
 }
 
 .glow:hover {
-  -webkit-box-shadow:0 0 139px 4px rgba(18,142,237,0.71);
-  -moz-box-shadow: 0 0 139px 4px rgba(18,142,237,0.71);
-  box-shadow: 0 0 139px 4px rgba(18,142,237,0.71);
+  -webkit-box-shadow: 0 0 139px 4px rgba(18, 142, 237, 0.71);
+  -moz-box-shadow: 0 0 139px 4px rgba(18, 142, 237, 0.71);
+  box-shadow: 0 0 139px 4px rgba(18, 142, 237, 0.71);
 }
 
 button:hover {

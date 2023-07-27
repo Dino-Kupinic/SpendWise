@@ -1,7 +1,7 @@
-import {createRouter, createWebHistory} from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AuthenticationView from "@/views/AuthenticationView.vue";
-import NotFoundView from "@/views/NotFoundView.vue";
+import {createRouter, createWebHistory} from "vue-router"
+import HomeView from "../views/HomeView.vue"
+import AuthenticationView from "@/views/AuthenticationView.vue"
+import NotFoundView from "@/views/NotFoundView.vue"
 
 const routes = [
   {
@@ -20,11 +20,11 @@ const routes = [
     name: "not found",
     component: NotFoundView,
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+})
 
-export default router;
+export default router

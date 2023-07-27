@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import MenuNavigationText from "@/components/text/MenuNavigationText.vue";
+import MenuNavigationText from "@/components/text/MenuNavigationText.vue"
 
 defineProps<{
   link: string,
-}>();
+}>()
 </script>
 
 <template>

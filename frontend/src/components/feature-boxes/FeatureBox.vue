@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BodyText from "@/components/text/BodyText.vue";
-import BodySubtitleText from "@/components/text/BodySubtitleText.vue";
+import BodyText from "@/components/text/BodyText.vue"
+import BodySubtitleText from "@/components/text/BodySubtitleText.vue"
 
 interface Props {
   width?: string,
@@ -10,7 +10,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   width: "30%",
   height: "16rem",
-});
+})
 </script>
 
 <template>

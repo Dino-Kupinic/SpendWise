@@ -6,8 +6,8 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   color: "var(--neutral-200)",
-  fontSize: "16px"
-});
+  fontSize: "16px",
+})
 
 </script>
 

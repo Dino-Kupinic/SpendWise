@@ -11,7 +11,7 @@ const {name, padding, fontSize, lineHeight} = withDefaults(defineProps<Props>(),
   padding: "0 5px 0 5px",
   fontSize: "2rem",
   lineHeight: "1.0",
-});
+})
 
 </script>
 

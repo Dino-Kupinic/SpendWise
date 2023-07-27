@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import github from "@/assets/img/github.svg";
-import {ref} from "vue";
+import github from "@/assets/img/github.svg"
+import {ref} from "vue"
 
 const props = defineProps<{
   name: string
-}>();
+}>()
 
-const imgSrc = ref("");
+const imgSrc = ref("")
 
 switch (props.name) {
   case "github":
-    imgSrc.value = github;
+    imgSrc.value = github
 }
 </script>
 

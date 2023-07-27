@@ -2,7 +2,7 @@
 defineProps<{
   to: string
   hollow?: boolean
-}>();
+}>()
 </script>
 
 <template>

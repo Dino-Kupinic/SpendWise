@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Icon from "@/components/util/Icon.vue";
-import Link from "@/components/util/Link.vue";
+import Icon from "@/components/util/Icon.vue"
+import Link from "@/components/util/Link.vue"
 
 defineProps<{
   icon: string,
   link: string,
-}>();
+}>()
 </script>
 
 <template>

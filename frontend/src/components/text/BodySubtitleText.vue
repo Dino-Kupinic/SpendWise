@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed} from "vue";
+import {computed} from "vue"
 
 interface Props {
   size?: string
@@ -7,7 +7,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   size: "2rem",
-});
+})
 
 </script>
 

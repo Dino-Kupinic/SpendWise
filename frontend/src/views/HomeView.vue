@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import SubtitleText from "@/components/text/SubtitleText.vue";
-import HeroButton from "@/components/button/HeroButton.vue";
-import HeroText from "@/components/text/HeroText.vue";
-import FeatureBox from "@/components/feature-boxes/FeatureBox.vue";
-import GoogleIcon from "@/components/util/GoogleIcon.vue";
-import BodySubtitleText from "@/components/text/BodySubtitleText.vue";
-import BodyText from "@/components/text/BodyText.vue";
+import SubtitleText from "@/components/text/SubtitleText.vue"
+import HeroButton from "@/components/button/HeroButton.vue"
+import HeroText from "@/components/text/HeroText.vue"
+import FeatureBox from "@/components/feature-boxes/FeatureBox.vue"
+import GoogleIcon from "@/components/util/GoogleIcon.vue"
+import BodySubtitleText from "@/components/text/BodySubtitleText.vue"
+import BodyText from "@/components/text/BodyText.vue"
 </script>
 
 <template>

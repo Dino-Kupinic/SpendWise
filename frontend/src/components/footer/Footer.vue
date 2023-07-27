@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BodyText from "@/components/text/BodyText.vue";
-import Link from "@/components/util/Link.vue";
-import GoogleIcon from "@/components/util/GoogleIcon.vue";
-import IconElement from "@/components/util/IconElement.vue";
+import BodyText from "@/components/text/BodyText.vue"
+import Link from "@/components/util/Link.vue"
+import GoogleIcon from "@/components/util/GoogleIcon.vue"
+import IconElement from "@/components/util/IconElement.vue"
 </script>
 
 <template>
@@ -12,7 +12,9 @@ import IconElement from "@/components/util/IconElement.vue";
       <BodyText font-size="14px">
         Released under the
         <Link link="https://github.com/Dino-Kupinic/SpendWise/blob/master/LICENSE">
-          MIT License.<GoogleIcon name="North_East" font-size="1.1rem" line-height="1.5"></GoogleIcon>
+          <span>
+            MIT License.<GoogleIcon name="North_East" font-size="1.1rem" line-height="1.5"></GoogleIcon>
+          </span>
         </Link>
         <br>
         Copyright © 2023 Dino Kupinic
