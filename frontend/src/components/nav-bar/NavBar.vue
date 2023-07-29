@@ -3,27 +3,46 @@ import NavTextElement from "@/components/nav-bar/NavTextElement.vue"
 import Logo from "@/components/util/Logo.vue"
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
+import ToggleButton from "@/components/nav-bar/ToggleButton.vue"
 import {ref} from "vue"
 
 const isActive = ref(false)
 
+const menuItems = [
+  {
+    text: "Features",
+    link: "/",
+  },
+  {
+    text: "Docs",
+    link: "/",
+  },
+  {
+    text: "Pricing",
+    link: "/",
+  },
+  {
+    text: "About",
+    link: "/",
+  },
+]
 </script>
 
 <template>
   <nav>
-    <div @click="isActive = !isActive" class="toggle-button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <ToggleButton @active-click="isActive = !isActive"></ToggleButton>
     <ul>
       <li class="logo-container">
         <Logo></Logo>
       </li>
-      <NavTextElement :class="{'active': isActive}" class="nav-elem" link="/">Features</NavTextElement>
-      <NavTextElement :class="{'active': isActive}" class="nav-elem" link="/">Docs</NavTextElement>
-      <NavTextElement :class="{'active': isActive}" class="nav-elem" link="/">Pricing</NavTextElement>
-      <NavTextElement :class="{'active': isActive}" class="nav-elem" link="/">About</NavTextElement>
+      <NavTextElement
+          v-for="item in menuItems"
+          :key="item.text"
+          :class="{'active': isActive, 'nav-elem': true}"
+          :link="item.link"
+      >
+        {{ item.text }}
+      </NavTextElement>
       <VerticalSpacer></VerticalSpacer>
       <ActionButton :class="{'active': isActive}" class="btn-elem" width="6rem" :hollow="true" :glow="true">
         Login
@@ -61,31 +80,6 @@ ul {
   height: 100%;
 }
 
-.toggle-button {
-  margin-left: 90%;
-  top: 1.4rem;
-  position: absolute;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 1.75rem;
-  height: 1rem;
-}
-
-.toggle-button:hover span {
-  background-color: var(--brand-500);
-  -webkit-box-shadow: 0 0 139px 4px rgba(18, 142, 237, 0.71);
-  -moz-box-shadow: 0 0 139px 4px rgba(18, 142, 237, 0.71);
-  box-shadow: 0 0 139px 8px rgba(18, 142, 237, 0.71);
-}
-
-.toggle-button span {
-  width: 100%;
-  height: 3px;
-  background-color: var(--brand-100);
-  border-radius: 0.5rem;
-}
-
 @media only screen and (min-width: 600px) {
   nav {
     top: 0;
@@ -119,10 +113,6 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
-  .toggle-button {
-    display: flex;
-  }
-
   .logo-container {
     padding-top: 0.5rem;
     padding-left: 1rem;
