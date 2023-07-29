@@ -6,10 +6,10 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import BodySubtitleText from "@/components/text/BodySubtitleText.vue"
 import BodyText from "@/components/text/BodyText.vue"
+
 </script>
 
 <template>
-
   <div class="hero-section">
     <span class="hero-text">
       <HeroText text="All"></HeroText>
