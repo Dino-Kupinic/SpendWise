@@ -2,20 +2,21 @@
 
 import NavBar from "@/components/nav-bar/NavBar.vue"
 import Footer from "@/components/footer/Footer.vue"
-import UserNavBar from "@/components/user-nav-bar/UserNavBar.vue"
 import {computed} from "vue"
 import {useRoute} from "vue-router"
 
 const route = useRoute()
-const noNavBar = computed<boolean>(() => route.path.startsWith("/user/"))
-
+const noNavBar = computed<boolean>(() => {
+  return route.path.startsWith("/user/") || route.path.startsWith("/auth")
+})
+const noFooter = computed<boolean>(() => route.path.startsWith("/auth"))
 </script>
 
 <template>
   <NavBar v-if="!noNavBar"></NavBar>
-  <UserNavBar v-else></UserNavBar>
+  <!-- <UserNavBar v-else></UserNavBar> -->
   <RouterView></RouterView>
-  <Footer></Footer>
+  <Footer v-if="!noFooter"></Footer>
 </template>
 
 <style scoped>

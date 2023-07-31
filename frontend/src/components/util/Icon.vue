@@ -1,22 +1,19 @@
 <script setup lang="ts">
-import github from "@/assets/img/github.svg"
-import {ref} from "vue"
+import {computed} from "vue"
 
 const props = defineProps<{
   name: string
 }>()
 
-const imgSrc = ref("")
-
-switch (props.name) {
-  case "github":
-    imgSrc.value = github
-}
+const imgSrc = computed(() => {
+  return new URL(`../../assets/img/${props.name}.svg`, import.meta.url).href
+})
 </script>
 
 <template>
   <div>
     <img :src="imgSrc" alt="Icon">
+    <slot></slot>
   </div>
 </template>
 

@@ -4,9 +4,14 @@ import RegisterBox from "@/components/auth/RegisterBox.vue"
 </script>
 
 <template>
-<RegisterBox></RegisterBox>
+  <div class="content">
+    <RegisterBox></RegisterBox>
+
+  </div>
 </template>
 
 <style scoped>
-
+.content {
+  height: 100vh;
+}
 </style>
