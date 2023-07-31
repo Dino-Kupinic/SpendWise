@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import HeroText from "@/components/text/HeroText.vue"
-import SubtitleText from "@/components/text/SubtitleText.vue"
+import SubtitleText from "@/components/text/HeroSubtitleText.vue"
 import BodyText from "@/components/text/BodyText.vue"
 import HeroButton from "@/components/button/HeroButton.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"

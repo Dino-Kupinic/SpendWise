@@ -1,11 +1,20 @@
 <script setup lang="ts">
-defineProps<{
+interface Props {
   link: string,
-}>()
+  opensTab?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  link: "",
+  opensTab: false,
+})
 </script>
 
 <template>
-  <a :href="link" target="_blank" rel="noopener noreferrer">
+  <a v-if="opensTab" :href="link" target="_blank" rel="noopener noreferrer">
+    <slot></slot>
+  </a>
+  <a v-else :href="link">
     <slot></slot>
   </a>
 </template>

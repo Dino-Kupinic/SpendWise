@@ -103,4 +103,6 @@ body::-webkit-scrollbar-corner {
     background-color: var(--neutral-900);
 }
 
-
+a {
+    text-decoration: none;
+}

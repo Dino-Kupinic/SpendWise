@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <li>
-    <RouterLink class="routerLink" :to="link">
+    <RouterLink :to="link">
       <MenuNavigationText>
         <slot></slot>
       </MenuNavigationText>
@@ -20,10 +20,6 @@ defineProps<{
 li {
   margin-right: 1.5rem;
   margin-left: 1.5rem;
-}
-
-.routerLink {
-  text-decoration: none;
 }
 
 </style>

@@ -44,17 +44,35 @@ const menuItems = [
         {{ item.text }}
       </NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-      <ActionButton :class="{'active': isActive}" class="btn-elem" width="6rem" :hollow="true" :glow="true">
-        Login
+      <ActionButton
+          :class="{'active': isActive, 'btn-elem': true}"
+          width="6rem" :hollow="true" :glow="true"
+      >
+        <RouterLink to="/auth">
+          <span class="login-text">Login</span>
+        </RouterLink>
       </ActionButton>
-      <ActionButton :class="{'active': isActive}" class="btn-elem" width="6rem" :glow="true">
-        Register
+      <ActionButton
+          :class="{'active': isActive, 'btn-elem': true}"
+          width="6rem" :glow="true"
+      >
+        <RouterLink to="/auth">
+          <span class="register-text">Register</span>
+        </RouterLink>
       </ActionButton>
     </ul>
   </nav>
 </template>
 
 <style scoped>
+.login-text {
+  color: var(--neutral-200);
+}
+
+.register-text {
+  color: var(--neutral-900);
+}
+
 nav {
   background: rgba(8, 8, 8, 0.7);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

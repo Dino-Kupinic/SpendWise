@@ -2,6 +2,7 @@
 interface Props {
   margin?: string,
   width?: string,
+  height?: string,
   hollow?: boolean,
   glow?: boolean
 }
@@ -9,6 +10,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   margin: "0.5rem 0.5rem",
   width: "auto",
+  height: "2rem",
   hollow: false,
 })
 </script>
@@ -30,7 +32,7 @@ button {
   color: var(--neutral-1000);
   font-weight: 400;
   font-size: 1rem;
-  height: 2rem;
+  height: v-bind(height);
 }
 
 .hollow {
@@ -41,7 +43,7 @@ button {
   color: var(--brand-500);
   font-weight: 400;
   font-size: 1rem;
-  height: 2rem;
+  height: v-bind(height);
 }
 
 .glow:hover {

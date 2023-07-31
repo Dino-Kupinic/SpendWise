@@ -11,7 +11,7 @@ import IconElement from "@/components/util/IconElement.vue"
     <div class="legal-info">
       <BodyText font-size="14px">
         Released under the
-        <Link link="https://github.com/Dino-Kupinic/SpendWise/blob/master/LICENSE">
+        <Link link="https://github.com/Dino-Kupinic/SpendWise/blob/master/LICENSE" :opens-tab="true">
           <span>
             MIT License.<GoogleIcon name="North_East" font-size="1.1rem" line-height="1.5"></GoogleIcon>
           </span>

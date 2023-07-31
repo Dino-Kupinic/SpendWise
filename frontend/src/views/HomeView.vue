@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SubtitleText from "@/components/text/SubtitleText.vue"
+import SubtitleText from "@/components/text/HeroSubtitleText.vue"
 import HeroButton from "@/components/button/HeroButton.vue"
 import HeroText from "@/components/text/HeroText.vue"
 import FeatureBox from "@/components/feature-boxes/FeatureBox.vue"
