@@ -9,6 +9,7 @@ import BodyText from "@/components/text/BodyText.vue"
 import Link from "@/components/util/Link.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
+import Spacer from "@/components/util/Spacer.vue"
 
 const usernameRef = ref("")
 const passwordRef = ref("")
@@ -46,9 +47,9 @@ const $v = useVuelidate(rules, state)
 </script>
 
 <template>
+  <BodySubtitleText class="title" font-size="1.8rem">Create your account</BodySubtitleText>
   <div class="container">
-    <BodySubtitleText class="title" font-size="1.8rem">Create your account</BodySubtitleText>
-    <InputField class="first-input" v-model="usernameRef" label="Username"></InputField>
+    <InputField v-model="usernameRef" label="Username"></InputField>
     <InputField v-model="passwordRef" label="Password" type="password"></InputField>
     <InputField v-model="emailRef" label="E-Mail" type="email"></InputField>
     <div class="terms">
@@ -60,7 +61,9 @@ const $v = useVuelidate(rules, state)
         </Link>
       </label><br>
     </div>
-    <ActionButton width="12rem" height="3rem">Create my account</ActionButton>
+    <div class="button-container">
+      <ActionButton class="btn" width="88%" height="3rem">Create my account</ActionButton>
+    </div>
   </div>
   <BodyText>
     Already have an account?
@@ -68,6 +71,7 @@ const $v = useVuelidate(rules, state)
       Login
     </Link>
   </BodyText>
+  <Spacer height="15.5vh"></Spacer>
 </template>
 
 <style scoped>
@@ -78,21 +82,32 @@ const $v = useVuelidate(rules, state)
   border: 1px solid var(--neutral-700);
   border-radius: 1rem;
   padding: 1.2rem;
-  width: 40%;
+  width: 25%;
+  min-width: 360px;
   margin: auto;
 }
 
-.first-input {
-  margin-top: 1rem;
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:deep(.btn) {
+  border-radius: 0.5rem;
 }
 
 .title {
-  padding-left: 0.25rem;
+  display: block;
+  text-align: center;
 }
 
 .terms {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .termstext {
@@ -103,5 +118,12 @@ const $v = useVuelidate(rules, state)
 .termsbox {
   width: 1.3rem;
   height: 1.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    min-width: 200px;
+  }
 }
 </style>

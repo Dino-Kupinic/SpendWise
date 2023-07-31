@@ -32,6 +32,12 @@ div {
 }
 
 .heroButton {
-  margin: 0 !important;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  div {
+    width: 80%;
+  }
 }
 </style>
