@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
+import {reactive, ref, watch} from "vue"
 import type {User} from "@/model/user"
-import {email, maxLength, minLength, required} from "@vuelidate/validators"
+import {email, helpers, maxLength, minLength, required, sameAs} from "@vuelidate/validators"
 import useVuelidate from "@vuelidate/core"
 import InputField from "@/components/controls/InputField.vue"
 import BodySubtitleText from "@/components/text/BodySubtitleText.vue"
@@ -11,11 +11,7 @@ import ActionButton from "@/components/button/ActionButton.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import Spacer from "@/components/util/Spacer.vue"
 import router from "@/router/router"
-
-const usernameRef = ref("")
-const passwordRef = ref("")
-const emailRef = ref("")
-const agreedTermsRef = ref(false)
+import InputError from "@/components/controls/InputError.vue"
 
 const state: User = reactive({
   username: "",
@@ -40,21 +36,43 @@ const rules = {
     maxLength: maxLength(100),
   },
   terms: {
-    required,
+    sameAs: helpers.withMessage("You need to accept the Terms & Conditions", sameAs(true)),
   },
 }
 
-const $v = useVuelidate(rules, state)
+const v$ = useVuelidate(rules, state)
+
+watch(v$, () => {
+  console.log(v$.value)
+  console.log(state.terms)
+})
+
+async function submitForm() {
+  const isFormCorrect = await v$.value.$validate()
+  if (!isFormCorrect) return
+}
 </script>
 
 <template>
   <BodySubtitleText class="title" font-size="1.8rem">Create your account</BodySubtitleText>
   <div class="container">
-    <InputField v-model="usernameRef" label="Username"></InputField>
-    <InputField v-model="passwordRef" label="Password" type="password"></InputField>
-    <InputField v-model="emailRef" label="E-Mail" type="email"></InputField>
+    <InputField v-model="state.username" label="Username">
+      <template #below-input>
+        <InputError field="username" :v$="v$"></InputError>
+      </template>
+    </InputField>
+    <InputField v-model="state.password" label="Password" type="password">
+      <template #below-input>
+        <InputError field="password" :v$="v$"></InputError>
+      </template>
+    </InputField>
+    <InputField v-model="state.email" label="E-Mail Address" type="email">
+      <template #below-input>
+        <InputError field="email" :v$="v$"></InputError>
+      </template>
+    </InputField>
     <div class="terms">
-      <input v-model="agreedTermsRef" class="termsbox" type="checkbox">
+      <input v-model="state.terms" class="termsbox" type="checkbox">
       <label class="termstext" for="terms">
         I agree to the
         <Link link="/terms">
@@ -62,17 +80,17 @@ const $v = useVuelidate(rules, state)
         </Link>
       </label><br>
     </div>
+    <!-- TODO: align error msg  -->
+    <InputError field="terms" :v$="v$"></InputError>
     <div class="button-container">
-      <ActionButton class="btn" width="88%" height="3rem">Create my account</ActionButton>
+      <ActionButton @click="submitForm" class="btn" width="88%" height="3rem">Create my account</ActionButton>
     </div>
   </div>
   <BodyText>
     Already have an account?
-    <Link @click="router.push('/auth/login')">
-      Login
-    </Link>
+    <Link @click="router.push('/auth/login')">Login</Link>
   </BodyText>
-  <Spacer height="15.5vh"></Spacer>
+  <Spacer></Spacer>
 </template>
 
 <style scoped>

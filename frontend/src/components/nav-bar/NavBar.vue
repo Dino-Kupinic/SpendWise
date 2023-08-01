@@ -44,22 +44,22 @@ const menuItems = [
         {{ item.text }}
       </NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-      <ActionButton
-          :class="{'active': isActive, 'btn-elem': true}"
-          width="6rem" :hollow="true" :glow="true"
-      >
-        <RouterLink to="/auth/login">
+      <RouterLink to="/auth/login">
+        <ActionButton
+            :class="{'active': isActive, 'btn-elem': true}"
+            width="6rem" :hollow="true" :glow="true"
+        >
           <span class="login-text">Login</span>
-        </RouterLink>
-      </ActionButton>
-      <ActionButton
-          :class="{'active': isActive, 'btn-elem': true}"
-          width="6rem" :glow="true"
-      >
-        <RouterLink to="/auth/register">
+        </ActionButton>
+      </RouterLink>
+      <RouterLink to="/auth/register">
+        <ActionButton
+            :class="{'active': isActive, 'btn-elem': true}"
+            width="6rem" :glow="true"
+        >
           <span class="register-text">Register</span>
-        </RouterLink>
-      </ActionButton>
+        </ActionButton>
+      </RouterLink>
     </ul>
   </nav>
 </template>
