@@ -9,6 +9,8 @@ import UserProfileView from "@/views/user/UserProfileView.vue"
 import NoNavBarLayout from "@/layouts/NoNavBarLayout.vue"
 import DefaultLayout from "@/layouts/DefaultLayout.vue"
 import NoNavBarAndFooterLayout from "@/layouts/NoNavBarAndFooterLayout.vue"
+import LoginBox from "@/components/auth/LoginBox.vue"
+import RegisterBox from "@/components/auth/RegisterBox.vue"
 
 const routes = [
   {
@@ -19,12 +21,6 @@ const routes = [
         path: "/",
         name: "home",
         component: HomeView,
-      },
-      // catch all 404
-      {
-        path: "/:pathMatch(.*)",
-        name: "not found",
-        component: NotFoundView,
       },
     ],
   },
@@ -52,6 +48,30 @@ const routes = [
         path: "/auth",
         name: "authentication",
         component: AuthenticationView,
+        children: [
+          {
+            path: "login",
+            name: "login",
+            component: LoginBox,
+          },
+          {
+            path: "register",
+            name: "register",
+            component: RegisterBox,
+          },
+        ],
+      },
+    ],
+  },
+  // catch all 404
+  {
+    path: "/:pathMatch(.*)",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "not found",
+        component: NotFoundView,
       },
     ],
   },

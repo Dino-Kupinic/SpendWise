@@ -16,4 +16,10 @@ h2 {
   line-height: 1.3;
   color: var(--neutral-400);
 }
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 </style>

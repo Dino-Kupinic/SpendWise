@@ -48,7 +48,7 @@ const menuItems = [
           :class="{'active': isActive, 'btn-elem': true}"
           width="6rem" :hollow="true" :glow="true"
       >
-        <RouterLink to="/auth">
+        <RouterLink to="/auth/login">
           <span class="login-text">Login</span>
         </RouterLink>
       </ActionButton>
@@ -56,7 +56,7 @@ const menuItems = [
           :class="{'active': isActive, 'btn-elem': true}"
           width="6rem" :glow="true"
       >
-        <RouterLink to="/auth">
+        <RouterLink to="/auth/register">
           <span class="register-text">Register</span>
         </RouterLink>
       </ActionButton>

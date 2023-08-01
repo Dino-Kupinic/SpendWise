@@ -10,6 +10,7 @@ import Link from "@/components/util/Link.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import Spacer from "@/components/util/Spacer.vue"
+import router from "@/router/router"
 
 const usernameRef = ref("")
 const passwordRef = ref("")
@@ -67,7 +68,7 @@ const $v = useVuelidate(rules, state)
   </div>
   <BodyText>
     Already have an account?
-    <Link link="/auth">
+    <Link @click="router.push('/auth/login')">
       Login
     </Link>
   </BodyText>
@@ -76,7 +77,6 @@ const $v = useVuelidate(rules, state)
 
 <style scoped>
 .container {
-  background: rgba(14, 14, 14, 0.4);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border: 1px solid var(--neutral-700);

@@ -5,11 +5,13 @@ interface Props {
   modelValue: string
   type?: string,
   label?: string,
+  autocomplete?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   type: "text",
   label: "Label",
+  autocomplete: "off",
 })
 
 const emit = defineEmits<{
@@ -22,7 +24,7 @@ const input = useVModel(props, "modelValue", emit)
   <div class="form-group">
     <label for="input">{{ label }}</label>
     <slot name="above-input"></slot>
-    <input v-model="input" name="input" :type="type">
+    <input v-model="input" :autocomplete="autocomplete" name="input" :type="type">
     <slot name="below-input"></slot>
   </div>
 </template>
@@ -44,6 +46,10 @@ input {
   border: 1px solid var(--neutral-700);
   border-radius: 0.5rem;
   width: auto;
+}
+
+input[type="password"] {
+  letter-spacing: 2px;
 }
 
 input:focus {

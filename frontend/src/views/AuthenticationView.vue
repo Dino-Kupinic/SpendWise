@@ -1,13 +1,12 @@
 <script setup lang="ts">
 
-import RegisterBox from "@/components/auth/RegisterBox.vue"
 import Logo from "@/components/util/Logo.vue"
 </script>
 
 <template>
   <div class="content">
     <Logo class="logo"></Logo>
-    <RegisterBox></RegisterBox>
+    <router-view></router-view>
   </div>
 </template>
 
