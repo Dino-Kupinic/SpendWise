@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, ref, watch} from "vue"
+import {reactive, watch} from "vue"
 import type {User} from "@/model/user"
 import {email, helpers, maxLength, minLength, required, sameAs} from "@vuelidate/validators"
 import useVuelidate from "@vuelidate/core"
@@ -42,31 +42,28 @@ const rules = {
 
 const v$ = useVuelidate(rules, state)
 
-watch(v$, () => {
-  console.log(v$.value)
-  console.log(state.terms)
-})
-
 async function submitForm() {
   const isFormCorrect = await v$.value.$validate()
   if (!isFormCorrect) return
+  await router.push("/")
 }
+
 </script>
 
 <template>
   <BodySubtitleText class="title" font-size="1.8rem">Create your account</BodySubtitleText>
   <div class="container">
-    <InputField v-model="state.username" label="Username">
+    <InputField :class="{'input-error': v$.username.$error}" v-model="state.username" label="Username">
       <template #below-input>
         <InputError field="username" :v$="v$"></InputError>
       </template>
     </InputField>
-    <InputField v-model="state.password" label="Password" type="password">
+    <InputField :class="{'input-error': v$.password.$error}" v-model="state.password" label="Password" type="password">
       <template #below-input>
         <InputError field="password" :v$="v$"></InputError>
       </template>
     </InputField>
-    <InputField v-model="state.email" label="E-Mail Address" type="email">
+    <InputField :class="{'input-error': v$.email.$error}" v-model="state.email" label="E-Mail Address" type="email">
       <template #below-input>
         <InputError field="email" :v$="v$"></InputError>
       </template>
@@ -80,8 +77,7 @@ async function submitForm() {
         </Link>
       </label><br>
     </div>
-    <!-- TODO: align error msg  -->
-    <InputError field="terms" :v$="v$"></InputError>
+    <InputError class="term-error" field="terms" :v$="v$"></InputError>
     <div class="button-container">
       <ActionButton @click="submitForm" class="btn" width="88%" height="3rem">Create my account</ActionButton>
     </div>
@@ -90,7 +86,7 @@ async function submitForm() {
     Already have an account?
     <Link @click="router.push('/auth/login')">Login</Link>
   </BodyText>
-  <Spacer></Spacer>
+  <Spacer height="8vh"></Spacer>
 </template>
 
 <style scoped>
@@ -103,6 +99,14 @@ async function submitForm() {
   width: 25%;
   min-width: 360px;
   margin: auto;
+}
+
+.term-error {
+  margin: 0 0 0.5rem 1rem;
+}
+
+.input-error :deep(input) {
+  border-color: var(--error-400);
 }
 
 .button-container {

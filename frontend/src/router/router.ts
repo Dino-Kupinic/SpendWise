@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router"
+import {type RouteLocationNormalized} from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import AuthenticationView from "@/views/AuthenticationView.vue"
 import NotFoundView from "@/views/NotFoundView.vue"
@@ -48,6 +49,7 @@ const routes = [
         path: "/auth",
         name: "authentication",
         component: AuthenticationView,
+        redirect: (to: RouteLocationNormalized) => ({path: "/auth/login"}),
         children: [
           {
             path: "login",
@@ -66,7 +68,8 @@ const routes = [
   // catch all 404
   {
     path: "/:pathMatch(.*)",
-    component: DefaultLayout,
+    component:
+    DefaultLayout,
     children: [
       {
         path: "",
@@ -83,3 +86,4 @@ const router = createRouter({
 })
 
 export default router
+
