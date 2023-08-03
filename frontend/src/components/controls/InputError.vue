@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import BodyText from "@/components/text/BodyText.vue"
+import type {V$} from "@/model/vuelidate"
 
 defineProps<{
-  v$: object,
+  v$: V$,
   field: string
 }>()
 </script>

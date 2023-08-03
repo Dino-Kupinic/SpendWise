@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, ref} from "vue"
+import {reactive} from "vue"
 import type {LoginUser} from "@/model/user"
 import {maxLength, minLength, required} from "@vuelidate/validators"
 import useVuelidate from "@vuelidate/core"
@@ -62,7 +62,7 @@ async function submitForm() {
       Register
     </Link>
   </BodyText>
-  <Spacer height="31vh"></Spacer>
+  <Spacer height="28vh"></Spacer>
 </template>
 
 <style scoped>
