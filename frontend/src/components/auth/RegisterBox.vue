@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, watch} from "vue"
+import {reactive} from "vue"
 import type {User} from "@/model/user"
 import {email, helpers, maxLength, minLength, required, sameAs} from "@vuelidate/validators"
 import useVuelidate from "@vuelidate/core"

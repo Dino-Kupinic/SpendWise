@@ -8,6 +8,8 @@ services:
       - "8080:8080"
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app  # Mount the local 'frontend' directory into the '/app' directory in the container
 
   backend:
     build:
@@ -23,6 +25,8 @@ services:
       - DB_USER=dkupinic
       - DB_PASSWORD=123
       - DB_NAME=expense_tracker
+    volumes:
+      - ./backend:/app  # Mount the local 'backend' directory into the '/app' directory in the container
 
   database:
     image: postgres
@@ -32,3 +36,8 @@ services:
       - POSTGRES_USER=dkupinic
       - POSTGRES_PASSWORD=123
       - POSTGRES_DB=expense_tracker
+    volumes:
+      - database_data:/var/lib/postgresql/data  # Mount the database data directory to enable data persistence
+
+volumes:
+  database_data:  # Create a named volume for the database data

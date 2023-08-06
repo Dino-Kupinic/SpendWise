@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router"
+import {createRouter, createWebHistory, type RouteMeta, type RouteRecordRaw} from "vue-router"
 import {type RouteLocationNormalized} from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import AuthenticationView from "@/views/AuthenticationView.vue"
@@ -13,7 +13,9 @@ import NoNavBarAndFooterLayout from "@/layouts/NoNavBarAndFooterLayout.vue"
 import LoginBox from "@/components/auth/LoginBox.vue"
 import RegisterBox from "@/components/auth/RegisterBox.vue"
 
-const routes = [
+const routes: Array<RouteRecordRaw> & {
+  meta?: RouteMeta
+} = [
   {
     path: "/",
     component: DefaultLayout,
@@ -34,9 +36,27 @@ const routes = [
         name: "User",
         component: User,
         children: [
-          {path: "", component: UserHomeView},
-          {path: "/profile", component: UserProfileView},
-          {path: "/tracker", component: ExpenseTrackerView},
+          {
+            path: "",
+            component: UserHomeView,
+            meta: {
+              requiresAuth: true,
+            },
+          },
+          {
+            path: "/profile",
+            component: UserProfileView,
+            meta: {
+              requiresAuth: true,
+            },
+          },
+          {
+            path: "/tracker",
+            component: ExpenseTrackerView,
+            meta: {
+              requiresAuth: true,
+            },
+          },
         ],
       },
     ],
@@ -49,7 +69,9 @@ const routes = [
         path: "/auth",
         name: "authentication",
         component: AuthenticationView,
-        redirect: (to: RouteLocationNormalized) => ({path: "/auth/login"}),
+        redirect: (to: RouteLocationNormalized) => ({
+          path: "/auth/login",
+        }),
         children: [
           {
             path: "login",
@@ -84,6 +106,19 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
+
+// TODO: implement auth
+router.beforeEach((to, from) => {
+  // if (to.meta.requiresAuth && !auth.isLoggedIn()) {
+  //   return {
+  //     path: "/auth/login",
+  //     query: {
+  //       redirect: to.fullPath,
+  //     },
+  //   };
+  // }
+})
+
 
 export default router
 

@@ -9,7 +9,7 @@ ARG NODE_VERSION=18.16.0
 FROM node:${NODE_VERSION}-alpine
 
 # Set the working directory inside the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the working directory
 COPY package*.json ./
