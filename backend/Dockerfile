@@ -25,3 +25,4 @@ EXPOSE 4000
 
 # Run the application.
 CMD npm run start:dev
+CMD npm run prismastudio

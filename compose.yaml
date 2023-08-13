@@ -18,21 +18,22 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "4000:4000"
+      - "3000:3000"
+      - "5555:5555"
     depends_on:
       - database
-
     environment:
-      DATABASE_URL: postgres://postgres:postgres@localhost:6433/expensetracker
-      NODE_ENV: development
-      PORT: 4000
+      - DB_HOST=postgres
+      - DB_PORT=5432
     volumes:
       - ./backend:/app  # Mount the local 'backend' directory into the '/app' directory in the container
 
   database:
     image: postgres
+    container_name: postgres
     ports:
-      - "6433:6433"
+      - "5432:5432"
+    restart: always
     environment:
       - POSTGRES_DB=expensetracker
       - POSTGRES_USER=postgres
