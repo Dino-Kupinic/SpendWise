@@ -21,19 +21,18 @@ services:
       - "4000:4000"
     depends_on:
       - database
+
     environment:
-      - DB_HOST=database
-      - DB_PORT=5433
-      - DB_USER=dkupinic
-      - DB_PASSWORD=123
-      - DB_NAME=expense_tracker
+      DATABASE_URL: postgres://postgres:postgres@localhost:6433/expensetracker
+      NODE_ENV: development
+      PORT: 4000
     volumes:
       - ./backend:/app  # Mount the local 'backend' directory into the '/app' directory in the container
 
   database:
     image: postgres
     ports:
-      - "6433:5432"
+      - "6433:6433"
     environment:
       - POSTGRES_DB=expensetracker
       - POSTGRES_USER=postgres
