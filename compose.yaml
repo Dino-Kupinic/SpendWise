@@ -1,6 +1,7 @@
 version: '3'
 services:
   frontend:
+    command: sh -c "npm rebuild esbuild && npm run dev"
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -10,6 +11,7 @@ services:
       - backend
     volumes:
       - ./frontend:/app  # Mount the local 'frontend' directory into the '/app' directory in the container
+    stdin_open: true
 
   backend:
     build:
@@ -31,13 +33,13 @@ services:
   database:
     image: postgres
     ports:
-      - "5433:5433"
+      - "6433:5432"
     environment:
-      - POSTGRES_USER=dkupinic
-      - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=expense_tracker
+      - POSTGRES_DB=expensetracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     volumes:
-      - database_data:/var/lib/postgresql/data  # Mount the database data directory to enable data persistence
+      - ./postgres-data:/var/lib/postgresql/data
 
 volumes:
-  database_data:  # Create a named volume for the database data
+  postgres-data:  # Create a named volume for the database data

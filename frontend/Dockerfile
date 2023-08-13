@@ -4,9 +4,10 @@ FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /app
 
-COPY package*.json yarn.lock ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
