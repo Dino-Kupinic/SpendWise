@@ -45,6 +45,28 @@ const v$ = useVuelidate(rules, state)
 async function submitForm() {
   const isFormCorrect = await v$.value.$validate()
   if (!isFormCorrect) return
+
+  const user: User = {
+    "username": state.username,
+    "password": state.password,
+    "email": state.email,
+    "terms": state.terms,
+  }
+
+  try {
+    await fetch("http://localhost:3000/users", {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+  } catch (err) {
+    console.error(err)
+  }
+
   await router.push("/")
 }
 
