@@ -10,6 +10,21 @@ export class UserService {
   }
 
   /**
+   * Retrieve a user by their username.
+   *
+   * @param {string} username - The username of the user to be retrieved.
+   * @return {Promise<User | undefined>} - A promise that resolves with the retrieved user object,
+   * or undefined if no user was found.
+   */
+  async getUser(username: string): Promise<User | undefined> {
+    return this.prisma.user.findFirst({
+      where: {
+        username: username,
+      },
+    })
+  }
+
+  /**
    * Retrieves a list of all users.
    *
    * @async
