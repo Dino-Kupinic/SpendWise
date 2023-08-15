@@ -10,7 +10,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./frontend:/app  # Mount the local 'frontend' directory into the '/app' directory in the container
+      - ./frontend:/app
     stdin_open: true
 
   backend:
@@ -26,7 +26,7 @@ services:
       - DB_HOST=postgres
       - DB_PORT=5432
     volumes:
-      - ./backend:/app  # Mount the local 'backend' directory into the '/app' directory in the container
+      - ./backend:/app
 
   database:
     image: postgres
@@ -42,4 +42,4 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
 
 volumes:
-  postgres-data:  # Create a named volume for the database data
+  postgres-data:
