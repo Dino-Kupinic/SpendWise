@@ -1,6 +1,6 @@
 import {Body, Controller, HttpCode, HttpStatus, Post} from "@nestjs/common"
 import {AuthService} from "./auth.service"
-import {type LoginUser} from "../../../frontend/src/model/user"
+import {LoginUser} from "../model/user"
 
 @Controller("auth")
 export class AuthController {
