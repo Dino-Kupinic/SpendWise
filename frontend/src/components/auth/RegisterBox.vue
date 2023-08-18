@@ -12,6 +12,7 @@ import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import Spacer from "@/components/util/Spacer.vue"
 import router from "@/router/router"
 import InputError from "@/components/controls/InputError.vue"
+import {EMAIL_MAX_LENGTH, MAX_LENGTH, PASSWORD_MIN_LENGTH} from "@/model/constants"
 
 const state: User = reactive({
   username: "",
@@ -23,17 +24,17 @@ const state: User = reactive({
 const rules = {
   username: {
     required,
-    maxLength: maxLength(50),
+    maxLength: maxLength(MAX_LENGTH),
   },
   password: {
     required,
-    minLength: minLength(8),
-    maxLength: maxLength(50),
+    minLength: minLength(PASSWORD_MIN_LENGTH),
+    maxLength: maxLength(MAX_LENGTH),
   },
   email: {
     required,
     email,
-    maxLength: maxLength(100),
+    maxLength: maxLength(EMAIL_MAX_LENGTH),
   },
   terms: {
     sameAs: helpers.withMessage("You need to accept the Terms & Conditions", sameAs(true)),
@@ -63,11 +64,10 @@ async function submitForm() {
       },
       body: JSON.stringify(user),
     })
+    await router.push("/login")
   } catch (err) {
     console.error(err)
   }
-
-  await router.push("/")
 }
 
 </script>

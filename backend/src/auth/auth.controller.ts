@@ -9,7 +9,9 @@ export class AuthController {
 
   @HttpCode(HttpStatus.OK)
   @Post("login")
-  signIn(@Body() loginUser: LoginUser) {
+  signIn(@Body() loginUser: LoginUser): Promise<{access_token: string}> {
     return this.authService.signIn(loginUser.username, loginUser.password)
   }
+
+
 }

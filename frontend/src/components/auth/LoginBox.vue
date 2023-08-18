@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {reactive} from "vue"
-import type {LoginUser} from "@/model/user"
+import type {LoginReponse, LoginUser} from "@/model/user"
 import {maxLength, minLength, required} from "@vuelidate/validators"
 import useVuelidate from "@vuelidate/core"
 import InputField from "@/components/controls/InputField.vue"
@@ -11,6 +11,7 @@ import ActionButton from "@/components/button/ActionButton.vue"
 import Spacer from "@/components/util/Spacer.vue"
 import router from "@/router/router"
 import InputError from "@/components/controls/InputError.vue"
+import {MAX_LENGTH, PASSWORD_MIN_LENGTH} from "@/model/constants"
 
 const state: LoginUser = reactive({
   username: "",
@@ -20,12 +21,12 @@ const state: LoginUser = reactive({
 const rules = {
   username: {
     required,
-    maxLength: maxLength(50),
+    maxLength: maxLength(MAX_LENGTH),
   },
   password: {
     required,
-    minLength: minLength(8),
-    maxLength: maxLength(50),
+    minLength: minLength(PASSWORD_MIN_LENGTH),
+    maxLength: maxLength(MAX_LENGTH),
   },
 }
 
@@ -34,7 +35,34 @@ const v$ = useVuelidate(rules, state)
 async function submitForm() {
   const isFormCorrect = await v$.value.$validate()
   if (!isFormCorrect) return
-  await router.push("/")
+
+  const loginUser: LoginUser = {
+    username: state.username,
+    password: state.password,
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/auth/login", {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginUser),
+    })
+
+    if (response.status !== 200)
+      return
+
+    const content: LoginReponse = await response.json()
+    localStorage.setItem("auth_token", content.access_token)
+
+    await router.push("/")
+  } catch (err) {
+    console.error(err)
+  }
 }
 </script>
 
