@@ -18,10 +18,12 @@ Intuitive and simple expense tracker.
 
 **Client:** Vue.js
 
-**Server:** Node, Nest.js
+**Server:** Node, Nest.js  
 
+**Database:** PostgrSQL with PrismaORM
 
-
+### Note:
+All 3 Services run in Docker.
 
 ## Feedback
 
