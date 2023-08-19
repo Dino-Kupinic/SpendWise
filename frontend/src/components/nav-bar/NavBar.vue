@@ -4,7 +4,7 @@ import Logo from "@/components/util/Logo.vue"
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
 import ToggleButton from "@/components/nav-bar/ToggleButton.vue"
-import {ref} from "vue"
+import {computed, ref} from "vue"
 
 const isActive = ref(false)
 
@@ -26,6 +26,17 @@ const menuItems = [
     link: "/",
   },
 ]
+
+const token = ref<string>(localStorage.getItem("auth_token") || "")
+
+const isLoggedIn = computed(() => {
+  return token.value !== ""
+})
+
+function logout() {
+  token.value = ""
+  localStorage.setItem("auth_token", "")
+}
 </script>
 
 <template>
@@ -44,22 +55,35 @@ const menuItems = [
         {{ item.text }}
       </NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-      <RouterLink to="/auth/login">
+
+      <template v-if="!isLoggedIn">
+        <RouterLink to="/auth/login">
+          <ActionButton
+              :class="{'active': isActive, 'btn-elem': true}"
+              width="6rem" :hollow="true" :glow="true"
+          >
+            <span class="login-text">Login</span>
+          </ActionButton>
+        </RouterLink>
+        <RouterLink to="/auth/register">
+          <ActionButton
+              :class="{'active': isActive, 'btn-elem': true}"
+              width="6rem" :glow="true"
+          >
+            <span class="register-text">Register</span>
+          </ActionButton>
+        </RouterLink>
+      </template>
+      <template v-else>
+        <li><h1>HALLO</h1></li>
         <ActionButton
             :class="{'active': isActive, 'btn-elem': true}"
             width="6rem" :hollow="true" :glow="true"
+            @click="logout"
         >
-          <span class="login-text">Login</span>
+          <span class="logout-text">Logout</span>
         </ActionButton>
-      </RouterLink>
-      <RouterLink to="/auth/register">
-        <ActionButton
-            :class="{'active': isActive, 'btn-elem': true}"
-            width="6rem" :glow="true"
-        >
-          <span class="register-text">Register</span>
-        </ActionButton>
-      </RouterLink>
+      </template>
     </ul>
   </nav>
 </template>

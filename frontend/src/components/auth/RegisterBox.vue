@@ -64,7 +64,7 @@ async function submitForm() {
       },
       body: JSON.stringify(user),
     })
-    await router.push("/login")
+    await router.push("/auth/login")
   } catch (err) {
     console.error(err)
   }

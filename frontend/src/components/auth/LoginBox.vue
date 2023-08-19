@@ -58,7 +58,7 @@ async function submitForm() {
 
     const content: LoginReponse = await response.json()
     localStorage.setItem("auth_token", content.access_token)
-
+    // Todo: update vue router 
     await router.push("/")
   } catch (err) {
     console.error(err)
