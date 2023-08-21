@@ -3,14 +3,15 @@ interface Props {
   name: string,
   padding?: string,
   fontSize?: string,
-  lineHeight?: string
+  lineHeight?: string,
+  color?: string
 }
 
-const {name, padding, fontSize, lineHeight} = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   name: "",
   padding: "0 5px 0 5px",
   fontSize: "2rem",
-  lineHeight: "1.0",
+  lineHeight: "1.0"
 })
 
 </script>
@@ -27,6 +28,7 @@ span {
   font-size: v-bind(fontSize);
   padding: v-bind(padding);
   line-height: v-bind(lineHeight);
+  color: v-bind(color);
 }
 
 </style>

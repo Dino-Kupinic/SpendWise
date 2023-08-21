@@ -5,6 +5,8 @@ import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
 import ToggleButton from "@/components/nav-bar/ToggleButton.vue"
 import {computed, ref} from "vue"
+import GoogleIcon from "@/components/util/GoogleIcon.vue"
+import Dropdown from "@/components/controls/Dropdown.vue"
 
 const isActive = ref(false)
 
@@ -35,6 +37,7 @@ const isLoggedIn = computed(() => {
 
 function logout() {
   token.value = ""
+
   localStorage.setItem("auth_token", "")
 }
 </script>
@@ -55,7 +58,6 @@ function logout() {
         {{ item.text }}
       </NavTextElement>
       <VerticalSpacer></VerticalSpacer>
-
       <template v-if="!isLoggedIn">
         <RouterLink to="/auth/login">
           <ActionButton
@@ -75,14 +77,24 @@ function logout() {
         </RouterLink>
       </template>
       <template v-else>
-        <li><h1>HALLO</h1></li>
-        <ActionButton
-            :class="{'active': isActive, 'btn-elem': true}"
-            width="6rem" :hollow="true" :glow="true"
-            @click="logout"
-        >
-          <span class="logout-text">Logout</span>
-        </ActionButton>
+        <Dropdown>
+          <template #name :class="{'active': isActive, 'nav-elem': true}">
+            <NavTextElement link="/">
+              <GoogleIcon name="Account_Circle" font-size="1.27rem" color="var(--neutral-100)"></GoogleIcon>
+              Account
+              <GoogleIcon name="Expand_More" font-size="1.3rem"></GoogleIcon>
+            </NavTextElement>
+          </template>
+          <template #content>
+            <ActionButton
+                :class="{'active': isActive, 'btn-elem': true}"
+                width="6rem" :hollow="true" :glow="true"
+                @click="logout"
+            >
+              <span class="logout-text">Logout</span>
+            </ActionButton>
+          </template>
+        </Dropdown>
       </template>
     </ul>
   </nav>
