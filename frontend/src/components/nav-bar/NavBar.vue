@@ -77,18 +77,21 @@ function logout() {
         </RouterLink>
       </template>
       <template v-else>
-        <Dropdown>
+        <Dropdown width="12rem">
           <template #name :class="{'active': isActive, 'nav-elem': true}">
             <NavTextElement link="/">
-              <GoogleIcon name="Account_Circle" font-size="1.27rem" color="var(--neutral-100)"></GoogleIcon>
+              <GoogleIcon name="Account_Circle" font-size="1.27rem"></GoogleIcon>
               Account
               <GoogleIcon name="Expand_More" font-size="1.3rem"></GoogleIcon>
             </NavTextElement>
           </template>
           <template #content>
+            <NavTextElement link="/profile">
+              Profile
+            </NavTextElement>
             <ActionButton
                 :class="{'active': isActive, 'btn-elem': true}"
-                width="6rem" :hollow="true" :glow="true"
+                width="12rem" :hollow="true" :glow="true"
                 @click="logout"
             >
               <span class="logout-text">Logout</span>

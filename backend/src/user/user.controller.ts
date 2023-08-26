@@ -9,11 +9,11 @@ export class UserController {
   }
 
   /**
-   * Retrieves a user by username.
+   * Retrieves the user with the specified username.
    *
-   * @param {string} username - The username of the user to retrieve.
-   * @return {Promise<UserModel | undefined>} A promise that resolves to the user model if found or undefined if not
-   * found.
+   * @param {string} username - The username of the user
+   * @returns {Promise<UserModel | undefined>} A promise that resolves to the user with the specified username,
+   * or undefined if the user doesn't exist.
    */
   @Get(":username")
   async getUser(@Param("username") username: string): Promise<UserModel | undefined> {

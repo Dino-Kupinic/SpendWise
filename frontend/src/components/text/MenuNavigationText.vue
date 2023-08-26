@@ -17,7 +17,7 @@ h4 {
   color: var(--neutral-200);
 }
 
-h4:hover {
+h4:hover, slot:hover {
   color: var(--brand-500);
   transition: all 0.3s;
 }
