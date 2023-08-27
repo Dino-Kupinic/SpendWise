@@ -91,7 +91,7 @@ function logout() {
             </NavTextElement>
             <ActionButton
                 :class="{'active': isActive, 'btn-elem': true}"
-                width="12rem" :hollow="true" :glow="true"
+                width="11rem" :hollow="true" :glow="true"
                 @click="logout"
             >
               <span class="logout-text">Logout</span>

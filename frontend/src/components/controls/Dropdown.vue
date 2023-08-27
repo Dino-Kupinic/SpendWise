@@ -38,16 +38,21 @@ function handleHoverLeave() {
 }
 
 .content {
-  display: none;
+  opacity: 0;
+  height: 0;
   position: absolute;
   padding: 0.1rem;
   background-color: var(--neutral-900);
   min-width: v-bind(width);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border: 1px solid var(--neutral-300);
+  border-radius: 1rem;
+  transition: all 0.15s;
 }
 
 .content.show {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
 </style>
