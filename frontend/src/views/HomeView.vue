@@ -31,7 +31,7 @@ import BodyText from "@/components/text/BodyText.vue"
       </HeroButton>
       <HeroButton to="" :hollow="true">
         <GoogleIcon name="North_east" font-size="1.4rem"></GoogleIcon>
-        Explore Docs
+        Choose a Plan
       </HeroButton>
     </div>
   </div>

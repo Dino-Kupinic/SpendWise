@@ -21,11 +21,11 @@ function handleHoverLeave() {
 </script>
 
 <template>
-  <li class="dropdown" @mouseleave="handleHoverLeave">
+  <li class="dropdown" >
     <div class="name" @mouseover="handleHover">
       <slot name="name"></slot>
     </div>
-    <div class="content" :class="{'show': isHovered}">
+    <div class="content" :class="{'show': isHovered}" @mouseleave="handleHoverLeave">
       <slot name="content"></slot>
     </div>
   </li>
@@ -42,11 +42,12 @@ function handleHoverLeave() {
   height: 0;
   position: absolute;
   padding: 0.1rem;
+  margin-top: 0.5rem;
   background-color: var(--neutral-900);
   min-width: v-bind(width);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border: 1px solid var(--neutral-300);
+  border: 1px solid var(--neutral-800);
   border-radius: 1rem;
   transition: all 0.15s;
 }

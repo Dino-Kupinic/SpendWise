@@ -86,14 +86,14 @@ function logout() {
             </NavTextElement>
           </template>
           <template #content>
-            <NavTextElement link="/profile">
+            <NavTextElement class="drop-elem" link="/profile">
               Profile
             </NavTextElement>
             <ActionButton
                 :class="{'active': isActive, 'btn-elem': true}"
-                width="11rem" :hollow="true" :glow="true"
-                @click="logout"
+                width="11rem" :hollow="true" @click="logout"
             >
+              <GoogleIcon name="logout" font-size="1.2rem" padding="0 5px 0 0"></GoogleIcon>
               <span class="logout-text">Logout</span>
             </ActionButton>
           </template>
