@@ -1,5 +1,13 @@
 <script setup lang="ts">
+interface Props {
+  fontSpacing: string,
+  fontSize: string
+}
 
+withDefaults(defineProps<Props>(), {
+  fontSpacing: "-0.02em",
+  fontSize: "1.5rem"
+})
 </script>
 
 <template>
@@ -12,8 +20,9 @@
 h2 {
   font-family: "Inter", serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: v-bind(fontSpacing);
   line-height: 1.3;
+  font-size: v-bind(fontSize);
   color: var(--neutral-400);
 }
 

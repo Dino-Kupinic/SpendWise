@@ -6,6 +6,8 @@ import FeatureBox from "@/components/feature-boxes/FeatureBox.vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import BodySubtitleText from "@/components/text/BodySubtitleText.vue"
 import BodyText from "@/components/text/BodyText.vue"
+import HeroSubtitleText from "@/components/text/HeroSubtitleText.vue"
+import StatsBox from "@/components/feature-boxes/StatsBox.vue"
 
 </script>
 
@@ -36,6 +38,30 @@ import BodyText from "@/components/text/BodyText.vue"
     </div>
   </div>
 
+  <div class="trusted-section">
+    <HeroSubtitleText font-spacing="0.2em" font-size="0.9rem">
+      LOVED BY MILLIONS OF USERS
+    </HeroSubtitleText>
+    <div class="stats-boxes">
+      <StatsBox>
+        <template #main>1,000,000+</template>
+        Monthly users
+      </StatsBox>
+      <StatsBox>
+        <template #main>500+</template>
+        Expenses tracked every minute
+      </StatsBox>
+      <StatsBox>
+        <template #main>99.9%</template>
+        Reliability and Uptime
+      </StatsBox>
+      <StatsBox>
+        <template #main>10+</template>
+        New features added every month
+      </StatsBox>
+    </div>
+  </div>
+
   <div class="feature-section">
     <FeatureBox>
       <BodySubtitleText>Expense Entry</BodySubtitleText>
@@ -62,10 +88,21 @@ import BodyText from "@/components/text/BodyText.vue"
 </template>
 
 <style scoped>
+.trusted-section {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.stats-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
 .hero-section {
   margin-bottom: 1rem;
   padding: 8rem;
-  height: 45vh;
+  height: 28vh;
   text-align: center;
 }
 
