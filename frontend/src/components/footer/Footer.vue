@@ -29,6 +29,7 @@ footer {
   text-decoration: none;
   padding: 0;
   margin-top: 4rem;
+  border-top: 1px solid var(--neutral-600);
   background-color: var(--neutral-1000);
   height: 20vh;
   width: 100%;

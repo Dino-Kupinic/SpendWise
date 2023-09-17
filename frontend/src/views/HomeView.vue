@@ -90,7 +90,7 @@ import StatsBox from "@/components/feature-boxes/StatsBox.vue"
 <style scoped>
 .trusted-section {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
 }
 
 .stats-boxes {

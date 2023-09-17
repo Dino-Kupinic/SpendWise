@@ -109,14 +109,15 @@ const router = createRouter({
 
 // TODO: implement auth
 router.beforeEach((to, from) => {
-  // if (to.meta.requiresAuth && !auth.isLoggedIn()) {
-  //   return {
-  //     path: "/auth/login",
-  //     query: {
-  //       redirect: to.fullPath,
-  //     },
-  //   };
-  // }
+  const isLoggedIn = localStorage.getItem("auth_token") !== null
+  if (to.meta.requiresAuth && !isLoggedIn) {
+    return {
+      path: "/auth/login",
+      query: {
+        redirect: to.fullPath,
+      },
+    };
+  }
 })
 
 

@@ -119,7 +119,7 @@ nav {
   -webkit-backdrop-filter: blur(18px);
   position: sticky;
   z-index: 100;
-  border-bottom: 1px solid var(--neutral-100);
+  border-bottom: 1px solid var(--neutral-700);
 }
 
 ul {
