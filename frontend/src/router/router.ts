@@ -107,9 +107,8 @@ const router = createRouter({
   routes,
 })
 
-// TODO: implement auth
 router.beforeEach((to, from) => {
-  const isLoggedIn = localStorage.getItem("auth_token") !== null
+  const isLoggedIn = localStorage.getItem("auth_token") !== ""
   if (to.meta.requiresAuth && !isLoggedIn) {
     return {
       path: "/auth/login",
