@@ -4,7 +4,7 @@ import Logo from "@/components/util/Logo.vue"
 import VerticalSpacer from "@/components/nav-bar/VerticalSpacer.vue"
 import ActionButton from "@/components/button/ActionButton.vue"
 import ToggleButton from "@/components/nav-bar/ToggleButton.vue"
-import {computed, ref} from "vue"
+import {computed, onMounted, ref} from "vue"
 import GoogleIcon from "@/components/util/GoogleIcon.vue"
 import Dropdown from "@/components/controls/Dropdown.vue"
 
@@ -39,6 +39,27 @@ function logout() {
   token.value = ""
 
   localStorage.setItem("auth_token", "")
+}
+
+onMounted(() => {
+  getProfile()
+})
+
+async function getProfile() {
+  try {
+    const response = await fetch("http://localhost:3000/auth/profile", {
+      method: "GET",
+      headers: {
+        "access_token": token.value,
+      },
+    })
+    if (response) {
+      console.log(response)
+      return "users/" + response + "/profile"
+    }
+  } catch (err) {
+    console.error(err)
+  }
 }
 </script>
 
@@ -86,7 +107,7 @@ function logout() {
             </NavTextElement>
           </template>
           <template #content>
-            <NavTextElement class="drop-elem" link="/profile">
+            <NavTextElement class="drop-elem" link="user/profile">
               Profile
             </NavTextElement>
             <ActionButton

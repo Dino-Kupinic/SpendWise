@@ -77,7 +77,7 @@ import StatsBox from "@/components/feature-boxes/StatsBox.vue"
       </BodyText>
     </FeatureBox>
     <FeatureBox>
-      <BodySubtitleText>User-Friendly Interface</BodySubtitleText>
+      <BodySubtitleText>UserDto-Friendly Interface</BodySubtitleText>
       <BodyText>
         Experience simplicity and ease! Our intuitive interface empowers you to navigate effortlessly,
         making expense tracking a delightful and productive experience.

@@ -26,4 +26,22 @@ export class AuthService {
       access_token: await this.jwtService.signAsync(payload),
     }
   }
+
+  async decodeToken(token: string): Promise<JwtPayload> {
+    try {
+      return this.jwtService.decode(token) as Promise<JwtPayload>
+    } catch (error) {
+      throw new Error("invalid JWT token")
+    }
+  }
+
+  async getUserFromToken(token: string) {
+    const decodedToken = await this.decodeToken(token)
+    const username = decodedToken.username
+    if (!username) {
+      throw new Error("username not found in JWT payload.")
+    }
+
+    return username
+  }
 }
